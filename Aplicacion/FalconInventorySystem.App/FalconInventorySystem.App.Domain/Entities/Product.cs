@@ -28,5 +28,10 @@ namespace FalconInventorySystem.App.Domain.Entities
         [Required(ErrorMessage = "The field {0} is required.")]
         public int CategoryId { get; set; } // Category relation - un producto solo puede tener asociado una categoría
         public Category Category { get; set; }
+
+
+        //Relation
+        public List<PurchaseOrderItem> PurchaseOrderItems { get; set; } //PurchaseOrderItems relation - un producto puede tener asociado muchos items de ordenes de compra
+        public List<BillOrderItem> BillOrderItems { get; set; } //BillOrderItem relation - un producto puede tener asociado muchos items de ordenes de venta
     }
 }

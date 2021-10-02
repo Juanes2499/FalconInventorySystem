@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FalconInventorySystem.App.Domain.Entities
 {
-    public class PurchaseOrderItem : BaseEntity
+    public class BillOrderItem : BaseEntity
     {
         [Required(ErrorMessage = "The field {0} is required.")]
         public int ProductId { get; set; } //Product relation  - un item puede tener asociado un solo producto
@@ -18,12 +18,9 @@ namespace FalconInventorySystem.App.Domain.Entities
 
 
         [Required(ErrorMessage = "The field {0} is required.")]
-        public double UnitValue { get; set; }
+        public int BillOrderId { get; set; } //BillOrder relation  - un item puede tener asociado una sola orden de venta
+        public BillOrder BillOrder { get; set; }
 
-
-        [Required(ErrorMessage = "The field {0} is required.")]
-        public int PurchaseOrderId { get; set; } //PurchaseOrder relation  - un item puede tener asociado una sola orden de compra
-        public PurchaseOrder PurchaseOrder { get; set; }
 
 
         [Required(ErrorMessage = "The field {0} is required.")]
@@ -34,9 +31,5 @@ namespace FalconInventorySystem.App.Domain.Entities
         [Required(ErrorMessage = "The field {0} is required.")]
         [StringLength(500, ErrorMessage = "The field {0} has more than {1} characters.")]
         public string Observation { get; set; }
-
-
-        //Relations
-        public List<ItemTransaction> ItemTransactions { get; set; } //ItemTransaction relation - Un Item puede tener asociado muchas transacciones
     }
 }
