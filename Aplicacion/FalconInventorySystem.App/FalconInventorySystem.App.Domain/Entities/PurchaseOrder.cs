@@ -17,7 +17,7 @@ namespace FalconInventorySystem.App.Domain.Entities
         [Required(ErrorMessage = "The field {0} is required.")]
         [DataType(DataType.Text)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DeliveryDate { get; set; }
+        public DateTime OrderCreationDate { get; set; }
 
 
         [Required(ErrorMessage = "The field {0} is required.")]
