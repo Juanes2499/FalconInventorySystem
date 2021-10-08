@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FalconInventorySystem.App.Domain.Entities
 {
-    public class Brand
+    public class Brand : BaseEntity
     {
         [Required(ErrorMessage = "The field {0} is required.")]
         [DataType(DataType.Text)]

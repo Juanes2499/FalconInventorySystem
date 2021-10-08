@@ -31,5 +31,9 @@ namespace FalconInventorySystem.App.Domain.Entities
         [Required(ErrorMessage = "The field {0} is required.")]
         [StringLength(500, ErrorMessage = "The field {0} has more than {1} characters.")]
         public string Observation { get; set; }
+
+
+        //Relation
+        public List<ItemTransaction> ItemTransactions { get; set; } //ItemTransaction relation - Un Item puede tener asociado muchas transacciones
     }
 }

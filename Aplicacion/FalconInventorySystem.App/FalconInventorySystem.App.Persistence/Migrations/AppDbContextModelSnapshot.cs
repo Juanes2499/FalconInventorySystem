@@ -147,6 +147,9 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<int>("BillOrderItemId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
@@ -154,7 +157,6 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Observation")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -168,6 +170,8 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BillOrderItemId");
 
                     b.HasIndex("PurchaseOrderItemId");
 
@@ -421,6 +425,12 @@ namespace FalconInventorySystem.App.Persistence.Migrations
 
             modelBuilder.Entity("FalconInventorySystem.App.Domain.Entities.ItemTransaction", b =>
                 {
+                    b.HasOne("FalconInventorySystem.App.Domain.Entities.BillOrderItem", "BillOrderItem")
+                        .WithMany("ItemTransactions")
+                        .HasForeignKey("BillOrderItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("FalconInventorySystem.App.Domain.Entities.PurchaseOrderItem", "PurchaseOrderItem")
                         .WithMany("ItemTransactions")
                         .HasForeignKey("PurchaseOrderItemId")
@@ -432,6 +442,8 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("BillOrderItem");
 
                     b.Navigation("PurchaseOrderItem");
 
@@ -498,6 +510,11 @@ namespace FalconInventorySystem.App.Persistence.Migrations
             modelBuilder.Entity("FalconInventorySystem.App.Domain.Entities.BillOrder", b =>
                 {
                     b.Navigation("BillOrderItems");
+                });
+
+            modelBuilder.Entity("FalconInventorySystem.App.Domain.Entities.BillOrderItem", b =>
+                {
+                    b.Navigation("ItemTransactions");
                 });
 
             modelBuilder.Entity("FalconInventorySystem.App.Domain.Entities.Brand", b =>
