@@ -1,0 +1,115 @@
+@page
+@model ProveedorModel
+<script src="../wwwroot/js/site.js"></script>
+
+
+<form class="form-inline">
+
+    <div type="button" class="atras">
+        <a href="Dashboard">
+            <img class="imagen"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAARCAYAAADkIz3lAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABLSURBVHgB3cxBCQAgDIXhF8Uoi2ADbaIRbGA0IxhBN/Ak6HbVBz/s8DHgPuKSYhC4saoWJDUrci8gWd8g4bBo/fgThgUXKPNclmMC5iw/sPMmeSMAAAAASUVORK5CYII=">
+    </div>
+    <h5>Proveedores</h5>
+    </a>
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+    <button id="btn-abrir-popup" class="btn btn-outline-success my-2 my-sm-0">Crear proveedor</button>
+</form>
+
+
+<table class="table table-responsive table-bordered">
+    <thead>
+        <tr class="titulo">
+            <th>Nit</th>
+            <th>Nombre proveedor</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>123141351</td>
+            <td>Daniel</td>
+            <td>Cr.32 No 32-45</td>
+            <td>3135759143</td>
+            <td>verdde3991@gmail.com</td>
+            <td><input type="image" src="https://cdn-icons-png.flaticon.com/128/347/347956.png"><input type="image"
+                    src="https://img-premium.flaticon.com/png/128/2782/premium/2782872.png?token=exp=1633376651~hmac=f17ee7f445a4ac5e4703b1fd4bc8ddd4">
+            </td>
+        </tr>
+        <tr>
+            <td>123141351</td>
+            <td>Daniel</td>
+            <td>Cr.32 No 32-45</td>
+            <td>3135759143</td>
+            <td>verdde3991@gmail.com</td>
+            <td><input type="image" src="https://cdn-icons-png.flaticon.com/128/347/347956.png"><input type="image"
+                    src="https://img-premium.flaticon.com/png/128/2782/premium/2782872.png?token=exp=1633376651~hmac=f17ee7f445a4ac5e4703b1fd4bc8ddd4">
+            </td>
+        </tr>
+        <tr>
+            <td>123141351</td>
+            <td>Daniel</td>
+            <td>Cr.32 No 32-45</td>
+            <td>3135759143</td>
+            <td>verdde3991@gmail.com</td>
+            <td><input type="image" src="https://cdn-icons-png.flaticon.com/128/347/347956.png"><input type="image"
+                    src="https://img-premium.flaticon.com/png/128/2782/premium/2782872.png?token=exp=1633376651~hmac=f17ee7f445a4ac5e4703b1fd4bc8ddd4">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="contenedor">
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <div class="ventanaPopUp">
+                <div class="group-titulo ">
+                    <i class="titulo-form">Crear proveedor
+                        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup fas fa-times"></a>
+                    </i>
+
+                </div>
+            </div>
+            <form action="">
+                <div class="contenedor-inputs">
+                    <p>NIT</p>
+                    <input type="text" placeholder="Nit">
+                    <p>Nombre proveedor</p>
+                    <input type="text" placeholder="Nombre completo">
+                    <p>Direccion</p>
+                    <input type="text" placeholder="Direccion">
+                    <p>Telefono</p>
+                    <input type="text" placeholder="Telefono">
+                    <p>Correo</p>
+                    <input type="email" placeholder="Correo">
+                </div>
+                <input type="submit" class="btn-submit" value="Cancelar">
+                <input type="submit" class="btn-submit" value="Crear proveedor">
+            </form>
+
+        </div>
+    </div>
+</div>
