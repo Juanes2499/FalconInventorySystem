@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FalconInventorySystem.App.Persistence.Migrations
 {
-    public partial class CreationEntities : Migration
+    public partial class EntitiesAreCreated : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OrderCreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Client = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -96,7 +96,7 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MaximumCapacity = table.Column<double>(type: "float", nullable: false),
                     MinimumCapacity = table.Column<double>(type: "float", nullable: false),
-                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -144,7 +144,7 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                     NumberOrder = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     OrderCreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SupplierId = table.Column<int>(type: "int", nullable: false),
-                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     Tax = table.Column<double>(type: "float", nullable: false),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -170,7 +170,7 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                     Amount = table.Column<int>(type: "int", nullable: false),
                     BillOrderId = table.Column<int>(type: "int", nullable: false),
                     StateId = table.Column<int>(type: "int", nullable: false),
-                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -208,7 +208,7 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                     UnitValue = table.Column<double>(type: "float", nullable: false),
                     PurchaseOrderId = table.Column<int>(type: "int", nullable: false),
                     StateId = table.Column<int>(type: "int", nullable: false),
-                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -243,9 +243,10 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Amount = table.Column<int>(type: "int", nullable: false),
-                    PurchaseOrderItemId = table.Column<int>(type: "int", nullable: false),
-                    WarehouseId = table.Column<int>(type: "int", nullable: false),
-                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    PurchaseOrderItemId = table.Column<int>(type: "int", nullable: true),
+                    WarehouseId = table.Column<int>(type: "int", nullable: true),
+                    BillOrderItemId = table.Column<int>(type: "int", nullable: true),
+                    Observation = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModificationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -253,11 +254,15 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                 {
                     table.PrimaryKey("PK_ItemTransactions", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_ItemTransactions_BillOrderItems_BillOrderItemId",
+                        column: x => x.BillOrderItemId,
+                        principalTable: "BillOrderItems",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_ItemTransactions_PurchaseOrderItems_PurchaseOrderItemId",
                         column: x => x.PurchaseOrderItemId,
                         principalTable: "PurchaseOrderItems",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_ItemTransactions_Warehouses_WarehouseId",
                         column: x => x.WarehouseId,
@@ -280,6 +285,11 @@ namespace FalconInventorySystem.App.Persistence.Migrations
                 name: "IX_BillOrderItems_StateId",
                 table: "BillOrderItems",
                 column: "StateId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ItemTransactions_BillOrderItemId",
+                table: "ItemTransactions",
+                column: "BillOrderItemId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ItemTransactions_PurchaseOrderItemId",
@@ -325,19 +335,19 @@ namespace FalconInventorySystem.App.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BillOrderItems");
-
-            migrationBuilder.DropTable(
                 name: "ItemTransactions");
 
             migrationBuilder.DropTable(
-                name: "BillOrders");
+                name: "BillOrderItems");
 
             migrationBuilder.DropTable(
                 name: "PurchaseOrderItems");
 
             migrationBuilder.DropTable(
                 name: "Warehouses");
+
+            migrationBuilder.DropTable(
+                name: "BillOrders");
 
             migrationBuilder.DropTable(
                 name: "Products");

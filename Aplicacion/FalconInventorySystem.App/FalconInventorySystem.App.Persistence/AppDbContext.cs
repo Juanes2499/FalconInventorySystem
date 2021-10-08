@@ -33,7 +33,8 @@ namespace FalconInventorySystem.App.Persistence
         {
             if (!OptionBuilder.IsConfigured)
             {
-                OptionBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=FalconInventorySystem;Integrated Security=True");
+                //OptionBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=FalconInventorySystem;Integrated Security=True");
+                OptionBuilder.UseSqlServer("data source=localhost,1433;initial catalog=FalconInventorySystem;persist security info=True;user id=sa;password=65F0r735cu3;MultipleActiveResultSets=True;App=EntityFramework");
             }
         }
     }

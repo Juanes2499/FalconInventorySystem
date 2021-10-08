@@ -27,8 +27,8 @@ namespace FalconInventorySystem.App.Persistence.Repositories
 
         public async Task<IEnumerable<PurchaseOrder>> GetAllPurchaseOrders()
         {
-            var purchaseOrder = await appDbContext.PurchaseOrders.ToListAsync();
-            return purchaseOrder;
+            var purchaseOrders = await appDbContext.PurchaseOrders.ToListAsync();
+            return purchaseOrders;
         }
 
         public async Task<PurchaseOrder> GetPurchaseOrderById(int id)
