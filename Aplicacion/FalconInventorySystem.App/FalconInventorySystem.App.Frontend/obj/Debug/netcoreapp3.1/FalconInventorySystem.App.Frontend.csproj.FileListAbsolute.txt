@@ -77,3 +77,5 @@ F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\F
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\FalconInventorySystem.App.Frontend.genruntimeconfig.cache
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\FalconInventorySystem.App.Frontend.csproj.CopyComplete
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Proveedor.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconSystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconSystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Proveedor.cshtml.g.cs

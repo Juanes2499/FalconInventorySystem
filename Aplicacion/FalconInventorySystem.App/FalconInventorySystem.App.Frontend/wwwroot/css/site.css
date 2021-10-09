@@ -125,7 +125,7 @@ body {
 h1 {
   color: #0f1055;
   font-size: 40px;
-  border-radius: nullpx;
+  border-radius: 0px;
 }
 
 h1 {
@@ -164,7 +164,7 @@ table {
 th,
 td {
   width: 25%;
-  text-align: left;
+  text-align: center;
   vertical-align: top;
   border: 1px solid #000;
   color: #0f1055;
@@ -199,6 +199,7 @@ td {
   box-shadow: 1px 5px 10px #000;
 }
 
+/*
 button,
 input {
   width: 20px;
@@ -206,6 +207,7 @@ input {
   margin-right: 5px;
   margin-left: 10px;
 }
+*/
 
 .atras {
   border-radius: 20px;
@@ -224,6 +226,7 @@ input {
   box-shadow: 1px 5px 10px#00000029;
   cursor: pointer;
 }
+
 .atra,
 h5 {
   color: #0f1055;
@@ -239,10 +242,11 @@ h5 {
   background-color: #0f1055;
   margin-left: 10px;
 }
-
+/*
 .form-control {
   margin-left: 550px;
 }
+*/
 .btn-outline-success:hover {
   background-color: #ffffff;
   color: #0f1055;
@@ -261,140 +265,3 @@ h5 {
   margin-left: 500px;
 }
 
-/*formulario de crear el proveedor*/
-
-.overlay {
-  background: rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  visibility: hidden;
-}
-
-.overlay.active {
-  visibility: visible;
-}
-
-.popup {
-  background: #ffffff;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-  font-family: "Montserrat", sans-serif;
-  padding: 20px;
-  text-align: center;
-  width: 600px;
-  height: 550px;
-  transition: 0.3s ease all;
-  transform: scale(0.7);
-}
-
-.popup .btn-cerrar-popup {
-  font-size: 16px;
-  line-height: 16px;
-  display: block;
-  text-align: right;
-  transition: 0.3s ease all;
-  color: #ffffff;
-  padding-right: 40px;
-  padding-bottom: 18px;
-}
-
-.popup .btn-cerrar-popup:hover {
-  color: rgb(137, 130, 168);
-}
-
-.popup h3 {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 10px;
-
-  color: #000;
-}
-
-.popup i {
-  font-size: 30px;
-  border: 1px;
-  border-radius: 3px;
-  color: #ffffff;
-  background-color: #0f1055;
-  text-align: left;
-  margin-top: -20px;
-  margin-left: 30px;
-  text-align: left;
-  font-size: 15px;
-  margin-left: 15px;
-  
-}
-
-.popup form .contenedor-inputs {
-  color: #0f1055;
-}
-
-.popup form .contenedor-inputs input {
-  width: 95%;
-  margin-bottom: 10px;
-  height: 32px;
-  font-size: 18px;
-  line-height: 52px;
-  text-align: left;
-  border: 1px solid #bbbbbb;
-  border-radius: 5px;
-}
-
-.popup form .btn-submit {
-  padding: 0 20px;
-  height: 40px;
-  width: 150px;
-  line-height: 40px;
-  border: none;
-  color: #fff;
-  background: #0f1055;
-  border-radius: 3px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease all;
-}
-
-.popup form .btn-submit:hover {
-  background: rgba(94, 125, 227, 0.9);
-}
-
-/* ------------------------- */
-/* ANIMACIONES */
-/* ------------------------- */
-.popup.active {
-  transform: scale(1);
-  opacity: 1;
-}
-.popup.active h3 {
-  animation: entradaTitulo 0.8s ease 0.5s forwards;
-}
-.popup.active h4 {
-  animation: entradaSubtitulo 0.8s ease 0.5s forwards;
-}
-.popup.active .contenedor-inputs {
-  animation: entradaInputs 1s linear 1s forwards;
-}
-
-p {
-  text-align: left;
-  font-size: 15px;
-  margin-top: 5px;
-  margin-left: 20px;
-}
-.group-titulo {
-  margin-left: -20px;
-  border: 1px;
-  border-radius: 3px;
-  color: #ffffff;
-  background-color: #0f1055;
-  margin-right: -20px;
-  text-align: left;
-  margin-top: -20px;
-}
