@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FalconInventorySystem.App.Domain.Entities
 {
-    public class ItemTransaction
+    public class ItemTransaction : BaseEntity
     {
 
         [Required(ErrorMessage = "The field {0} is required.")]
@@ -19,17 +19,18 @@ namespace FalconInventorySystem.App.Domain.Entities
         public int Amount { get; set; }
 
 
-        [Required(ErrorMessage = "The field {0} is required.")]
         public int PurchaseOrderItemId { get; set; } //PurchaseOrderItem relation - una trasanction puede tener un Item de orden de compra
         public PurchaseOrderItem PurchaseOrderItem { get; set; }
 
 
-        [Required(ErrorMessage = "The field {0} is required.")]
         public int WarehouseId { get; set; } //Warehouse relation - una trasanction puede tener una bodega asociada
         public Warehouse Warehouse { get; set; }
 
 
-        [Required(ErrorMessage = "The field {0} is required.")]
+        public int BillOrderItemId { get; set; } //BillOrderItem relation - una trasanction puede tener un Item de orden de venta
+        public BillOrderItem BillOrderItem { get; set; }
+
+
         [StringLength(500, ErrorMessage = "The field {0} has more than {1} characters.")]
         public string Observation { get; set; }
     }
