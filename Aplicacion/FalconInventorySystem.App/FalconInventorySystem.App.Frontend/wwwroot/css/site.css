@@ -1,67 +1,113 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
+﻿html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f1f1f1;
+  text-align: center;
 }
+
+.card:hover {
+  margin-bottom: 20px;
+  border: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  box-shadow: 1px 5px 10px#00000029;
+  cursor: pointer;
+}
+
+.box {
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transition: 0.25s;
+  margin-top: 100px;
+  box-shadow: 1px 5px 10px #00000029;
+  background-color: #ffffff;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  padding: 18px 30px;
+  text-align: left;
+  box-shadow: 1px 5px 10px#00000029;
+  border-width: 0.5px;
+  border-color: #ecefeb;
+  border-style: solid;
+  width: 350px;
+  outline: none;
+  color: black;
+  border-radius: 10px;
+}
+
+/* Icons FontAwesome for login */
+
+.user {
+  position: relative;
+}
+
+.user i {
+  position: absolute;
+  left: 45px;
+  top: 12px;
+  color: #0f1055;
+}
+
+.password {
+  position: relative;
+}
+
+.password i {
+  position: absolute;
+  left: 45px;
+  top: 12px;
+  color: #0f1055;
+}
+
+.box h2 {
+  color: #0f1055;
+  font-size: 20px;
+}
+
+.text-muted span {
+  color: #0f1055;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: #0f1055;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #0f1055;
+  padding: 0px 40px;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 350px;
+
+  height: 30px;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -69,3 +115,153 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/*style dashboard */
+.card-body {
+  padding: 50px 50px 50px 50px;
+}
+
+.h1,
+h1 {
+  color: #0f1055;
+  font-size: 40px;
+  border-radius: 0px;
+}
+
+h1 {
+  margin-top: 100px;
+}
+
+.col {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 300;
+}
+
+.container-fluid,
+h3 {
+  text-align: left;
+  margin-top: 100px;
+}
+
+.text-xs {
+  color: #0f1055;
+}
+/*style tabla provvedor */
+table {
+  margin-top: 50px;
+  margin: center;
+  border: solid #000;
+  background-color: #fff;
+}
+th,
+td {
+  width: 25%;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid #000;
+  color: #0f1055;
+}
+.titulo {
+  background-color: #a1a1ae;
+}
+
+.search1 {
+  margin-top: 100px;
+  margin-right: 10px;
+  margin-left: 350px;
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.AddProveedor {
+  background: #0f1055;
+  text-align: center;
+  border: 2px solid #0f1055;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 150px;
+  margin-left: 350px;
+  height: 35px;
+}
+
+.AddProveedor:active {
+  box-shadow: 1px 5px 10px #000;
+}
+
+/*
+button,
+input {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+*/
+
+.atras {
+  border-radius: 20px;
+  border: 1px transparent #000;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+
+  margin-bottom: 20px;
+
+  position: relative;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+
+  box-shadow: 1px 5px 10px#00000029;
+  cursor: pointer;
+}
+
+.atra,
+h5 {
+  color: #0f1055;
+  margin-left: 10px;
+}
+
+.btn-outline-success {
+  width: 150px;
+  height: 35px;
+  padding: 5px;
+  color: #fafafa;
+  border-color: #0f1055;
+  background-color: #0f1055;
+  margin-left: 10px;
+}
+/*
+.form-control {
+  margin-left: 550px;
+}
+*/
+.btn-outline-success:hover {
+  background-color: #ffffff;
+  color: #0f1055;
+  border-color: #0f1055;
+}
+.btn-outline-success:active {
+  background-color: #ffffff;
+  color: #0f1055;
+  border-color: #0f1055;
+}
+.form-inline {
+  margin-top: 100px;
+}
+
+.pagination {
+  margin-left: 500px;
+}
+

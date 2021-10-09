@@ -1,0 +1,134 @@
+@page
+@model ProveedorModel
+
+
+
+<h1>Proveedores</h1>
+
+<div class="container text-right">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Crear Proveedor
+    </button>
+</div>
+
+
+<table class="table table-responsive table-bordered ">
+    <thead class="text-center">
+        <tr class="titulo">
+            <th>Nit</th>
+            <th>Nombre proveedor</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Fecha Creacion</th>
+            <th>Fecha Actualizacion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr>
+            <td>123141351</td>
+            <td>Daniel</td>
+            <td>Cr.32 No 32-45</td>
+            <td>3135759143</td>
+            <td>verdde3991@gmail.com</td>
+            <td></td>
+            <td></td>
+            <td class="text-center">
+                <i class="far fa-edit fa-2x"></i> <i class="fas fa-trash-alt fa-2x"></i>     
+           </td>
+        </tr>
+        <tr>
+            <td>123141351</td>
+            <td>Daniel</td>
+            <td>Cr.32 No 32-45</td>
+            <td>3135759143</td>
+            <td>verdde3991@gmail.com</td>
+            <td></td>
+            <td></td>
+            <td class= "text-center">
+                <i class="far fa-edit fa-2x"></i> <i class="fas fa-trash-alt fa-2x"></i>
+            </td>
+        </tr>
+        <tr>
+            <td>123141351</td>
+            <td>Daniel</td>
+            <td>Cr.32 No 32-45</td>
+            <td>3135759143</td>
+            <td>verdde3991@gmail.com</td>
+            <td></td>
+            <td></td>
+            <td class= "text-center">
+            <i class="far fa-edit fa-2x"></i> <i class="fas fa-trash-alt fa-2x"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Crear Proveedor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="number" class="form-control" id="id"  placeholder="ID">
+            </div>
+            <div class="form-group">
+                <label for="razon_social">Razón Social</label>
+                <input type="text" class="form-control" id="razon_social"  placeholder="Razón Social">
+            </div>
+            <div class="form-group">
+                <label for="nit">NIT</label>
+                <input type="text" class="form-control" id="nit"  placeholder="NIT">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input type="text" class="form-control" id="direccion"  placeholder="Direccion">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefono</label>
+                <input type="tel" class="form-control" id="phone"  placeholder="Telefono">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="tel" class="form-control" id="email"  placeholder="Email">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
