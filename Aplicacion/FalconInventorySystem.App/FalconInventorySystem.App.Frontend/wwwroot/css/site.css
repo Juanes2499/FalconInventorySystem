@@ -265,3 +265,63 @@ h5 {
   margin-left: 500px;
 }
 
+.container-search{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin-top: 6rem;
+
+}
+
+.demo {
+  flex-basis: 25%;
+  margin-left: 33rem;
+}
+
+.button-search{
+  margin-left: 2%;
+
+ 
+}
+.btn.btn-primary{
+  background-color: #0f1055;
+}
+.back{
+  margin-top: 10px;
+  align-self: flex-start;
+
+}
+
+.search-der{
+  align-self: flex-end;
+}
+.img_back{
+ height: 1.5em;
+
+}
+.modal-header{
+  background-color: #0f1055;
+}
+.modal-title,.close{
+  color:#fff
+}
+.close:hover{
+  color:rgb(216, 213, 213)
+}
+
+.form-group{
+ text-align:left;
+ 
+}
+label{
+  margin-left: 10px;
+}
+.btn-secondary{
+  background-color: #0f1055;
+}
+
+/*lote */
+.form-select{
+  margin-left: 5em;
+}

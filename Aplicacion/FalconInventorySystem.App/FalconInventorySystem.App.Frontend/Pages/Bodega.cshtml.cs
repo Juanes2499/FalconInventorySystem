@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+
+namespace FalconInventorySystem.App.Frontend.Pages
+{
+    public class BodegaModel : PageModel
+    {
+        private readonly ILogger<BodegaModel> _logger;
+
+        public BodegaModel(ILogger<BodegaModel> logger)
+        {
+            _logger = logger;
+        }
+
+        public void OnGet()
+        {
+
+        }
+    }
+}

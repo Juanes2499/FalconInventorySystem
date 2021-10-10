@@ -8,17 +8,18 @@ using Microsoft.Extensions.Logging;
 
 namespace FalconInventorySystem.App.Frontend.Pages
 {
-    public class VentasModel : PageModel
+    public class ProductoModel : PageModel
     {
-        private readonly ILogger<VentasModel> _logger;
+        private readonly ILogger<ProductoModel> _logger;
 
-        public VentasModel(ILogger<VentasModel> logger)
+        public ProductoModel(ILogger<ProductoModel> logger)
         {
             _logger = logger;
         }
 
         public void OnGet()
         {
+
         }
     }
 }

@@ -66,7 +66,6 @@ F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\F
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Ventas.cshtml.g.cs
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\FalconInventorySystem.App.Frontend.RazorTargetAssemblyInfo.cache
@@ -79,3 +78,8 @@ F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\F
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Proveedor.cshtml.g.cs
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconSystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Dashboard.cshtml.g.cs
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconSystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Proveedor.cshtml.g.cs
+F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Producto.cshtml.g.cs
+F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Bodega.cshtml.g.cs
+F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenCompra.cshtml.g.cs
+F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Almacenamiento.cshtml.g.cs
+F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Lote.cshtml.g.cs

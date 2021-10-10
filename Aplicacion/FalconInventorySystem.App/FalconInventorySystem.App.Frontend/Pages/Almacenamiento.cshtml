@@ -1,5 +1,5 @@
 @page
-@model DashboardModel
+@model AlmacenamientoModel
 
 
 <div class="container-fluid">
@@ -8,7 +8,7 @@
   
     <div class="col-xl-3 col-md-6 mb-4">
       <div type="button" class="card">
-       <a href="Proveedor">
+       <a href="Lote">
         <div class="card-body">
           <div class="row">
             <div class="col">
@@ -19,7 +19,7 @@
                 
               </div>
               <div class="text-xs">
-                Proveedor</div>
+                Lote</div>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@
 
     <div class="col-xl-3 col-md-3 mb-4">
       <div type="button" class="card">
-        <a href="Producto">
+        <a href="Bodega">
         <div class="card-body">
           <div class="row">
             <div class="col">
@@ -38,7 +38,7 @@
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAeCAYAAACiyHcXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFuSURBVHgB7ZbRTcMwEIZ/p+kTUrgRwgYdIWxQqS08UiZomYAyQekE5R1QYIOO0BEygkE8RjbnIAunooqTViKIfC+OncvlT3Lx/QIeEA0pRzhw10IIKeXj1s5PaDIQ0OTGfMinDTwIfYIUeosexMxd09AbHs6dREtAJG5MRKPVu3yeV+UP4IUgNCI49YpCC2iFCK+a2EdElzMBNdcIVqZyfkGESFhAUhxBLXEAXU1YOhGWvyRCSzRCvflECXhCNE5Qm3wr5UvDB/iPFJ+jyguwn4jZT8Tu+RB5xq86c2Iae46QaDLVwHqnPEzyMztRCI2fuHIDFPqvPAztXKOf9oCkHIMHHq6/RSHl+8RuTETjm0BBlxZ94Sfy8goeULdZWfa2cqLRkH3CWkPcH+IVIrq45U835Qx3qCkiZgGpOeAEixp7Wgm+ampK1hAUxf8zXU1YOhGW1og4VqttlIe3gKz4947hFUwDw04Dq+arwX0Cug1rFfTEBEoAAAAASUVORK5CYII=">
               </div>
               <div class="text-xs">
-                Productos</div>
+                Bodega</div>
             </div>
           </div>
         </div>
@@ -46,45 +46,6 @@
     </div>
     </a>
 
-
-    <div class="col-xl-3 col-md-3 mb-4">
-      <div type="button" class="card">
-         <a href="Almacenamiento">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="col-auto">
-                <img class="imagen"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAaCAYAAAA5WTUBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGhSURBVHgB7ZZNTsJAFMf/M60JJAbGG5S1ieEI5QYkQuLSrSviCdQjsHMnS6NE8QTgDboy7hxuMGFFYun4ype10A8IJY36S8ij0/cm/7x5b/qYEKd1Dd5CCA3mjNTDJfaA6YFVGWCHXzBoi8xShBB14cKsRm4E11Gqp4Jrh6Jhx/hL8pez/ynRMPsGCY56Pwa3yKhv0WeWxqQfvd+BJFOZiuAwO8DEX4AHj7KyejQzmEBGmErdS7Id/8FPnwG0sGc4csDORcQVY+YiCuCVsmj6xdv3LeBaaWNTd0cSdK88k1kUr03PdtrYXR7H1t3zOwtzG/5FLPjzIpYfu9T3BINR2+QCSsZ1NhYx/9BJZEAuaiIuE6IkmnfIGI7Pm1gRNPadI2M8mMP8HYc/rHow2pSk8mKNsmFhdRDu6UCLRbEmk5LiBsEFDrfDkEBJNK4Z2NXPzXVNqe4gLm4+6H4E10jAy0g91sO+icfBQ8oxbVNXJsXNW3oQEtFb52sggfH4TRYLx0PaguYF5lDqLpR6ekcKioWTVw3viGIU/doj1b1d5/cFXit1VZTuHSUAAAAASUVORK5CYII=">
-              </div>
-              <div class="text-xs">
-                Almacenamiento</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </a>
-
-
-    <div class="col-xl-3 col-md-3 mb-4">
-      <div type="button" class="card">
-         <a href="OrdenCompra">
-        <div class="card-body col-gl-2">
-          <div class="row">
-            <div class="col">
-              <div class="col-auto">
-                <img class="imagen"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAaCAYAAAA5WTUBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGhSURBVHgB7ZZNTsJAFMf/M60JJAbGG5S1ieEI5QYkQuLSrSviCdQjsHMnS6NE8QTgDboy7hxuMGFFYun4ype10A8IJY36S8ij0/cm/7x5b/qYEKd1Dd5CCA3mjNTDJfaA6YFVGWCHXzBoi8xShBB14cKsRm4E11Gqp4Jrh6Jhx/hL8pez/ynRMPsGCY56Pwa3yKhv0WeWxqQfvd+BJFOZiuAwO8DEX4AHj7KyejQzmEBGmErdS7Id/8FPnwG0sGc4csDORcQVY+YiCuCVsmj6xdv3LeBaaWNTd0cSdK88k1kUr03PdtrYXR7H1t3zOwtzG/5FLPjzIpYfu9T3BINR2+QCSsZ1NhYx/9BJZEAuaiIuE6IkmnfIGI7Pm1gRNPadI2M8mMP8HYc/rHow2pSk8mKNsmFhdRDu6UCLRbEmk5LiBsEFDrfDkEBJNK4Z2NXPzXVNqe4gLm4+6H4E10jAy0g91sO+icfBQ8oxbVNXJsXNW3oQEtFb52sggfH4TRYLx0PaguYF5lDqLpR6ekcKioWTVw3viGIU/doj1b1d5/cFXit1VZTuHSUAAAAASUVORK5CYII=">
-              </div>
-              <div class="text-xs">
-                Orden de Compra</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </a>
 
   </div>
 

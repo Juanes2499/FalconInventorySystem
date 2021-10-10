@@ -1,5 +1,5 @@
 @page
-@model ProveedorModel
+@model ProductoModel
 
 
 
@@ -7,7 +7,7 @@
 
 <div class="container-search">
     <a class="back" href="Dashboard">
-        <img class="img_back" src="https://img.icons8.com/ios-filled/50/000000/back.png" />Proveedores
+        <img class="img_back" src="https://img.icons8.com/ios-filled/50/000000/back.png" />Orden de compra
     </a>
     
         <div class="demo">
@@ -20,7 +20,7 @@
         </div>
         <div class="button-search">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Crear Proveedor
+                Crear Orden de Compra
             </button>
         </div>
     
@@ -30,13 +30,12 @@
 <table class="table table-responsive table-bordered ">
     <thead class="text-center">
         <tr class="titulo">
-            <th>Nit</th>
-            <th>Nombre proveedor</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th>Fecha Creacion</th>
-            <th>Fecha Actualizacion</th>
+            
+            <th>Nombre Producto</th>
+            <th>Valor</th>
+            <th>Fecha vencimiento</th>
+            <th>Marca</th>
+            <th>Categoria</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -47,11 +46,9 @@
             <td>Cr.32 No 32-45</td>
             <td>3135759143</td>
             <td>verdde3991@gmail.com</td>
-            <td></td>
-            <td></td>
+            
             <td class="text-center">
-                <a data-toggle="modal" data-target="#exampleModalCenter" ><i class="far fa-edit fa-2x"></i></a> 
-                <a data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-trash-alt fa-2x"></i></a>
+                <a class="edit"data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-edit fa-2x"></i></a> <i class="fas fa-trash-alt fa-2x"></i>
             </td>
         </tr>
         <tr>
@@ -60,20 +57,18 @@
             <td>Cr.32 No 32-45</td>
             <td>3135759143</td>
             <td>verdde3991@gmail.com</td>
-            <td></td>
-            <td></td>
+            
             <td class="text-center">
                 <i class="far fa-edit fa-2x"></i> <i class="fas fa-trash-alt fa-2x"></i>
             </td>
         </tr>
         <tr>
-            <td>123141351</td>
+           <td>123141351</td>
             <td>Daniel</td>
             <td>Cr.32 No 32-45</td>
             <td>3135759143</td>
             <td>verdde3991@gmail.com</td>
-            <td></td>
-            <td></td>
+            
             <td class="text-center">
                 <i class="far fa-edit fa-2x"></i> <i class="fas fa-trash-alt fa-2x"></i>
             </td>
@@ -115,32 +110,24 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="razon_social">Razón Social</label>
-                        <input type="text" class="form-control" id="razon_social" placeholder="Razón Social">
+                        <label for="Nombre_Producto">Nombre Productor</label>
+                        <input type="text" class="form-control" id="nombre_producto" placeholder="Nombre Productor">
                     </div>
                     <div class="form-group">
-                        <label for="nit">NIT</label>
-                        <input type="text" class="form-control" id="nit" placeholder="NIT">
+                        <label for="Valor">Valor</label>
+                        <input type="text" class="form-control" id="valor" placeholder="Valor">
                     </div>
                     <div class="form-group">
-                        <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" id="direccion" placeholder="Direccion">
+                        <label for="Fecha_vencimiento">Fecha vencimiento</label>
+                        <input type="text" class="form-control" id="fecha_ven" placeholder="Direccion">
                     </div>
                     <div class="form-group">
-                        <label for="phone">Telefono</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Telefono">
+                        <label for="Marca">Marca</label>
+                        <input type="tex" class="form-control" id="marca" placeholder="Marca">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="tel" class="form-control" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="frecha_creacion">Fecha creacion</label>
-                        <input type="date" class="form-control" id="fecha_creacion" placeholder="Fecha creacion">
-                    </div>
-                    <div class="form-group">
-                        <label for="frecha_actualizacion">Fecha actualizacion</label>
-                        <input type="date" class="form-control" id="fecha_actualizacion" placeholder="Fecha actualizacion">
+                        <label for="categoria">Categoria</label>
+                        <input type="text" class="form-control" id="categoria" placeholder="categoria">
                     </div>
                 </form>
             </div>
