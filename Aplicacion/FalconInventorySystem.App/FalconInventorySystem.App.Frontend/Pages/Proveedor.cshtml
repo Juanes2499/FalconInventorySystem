@@ -2,9 +2,6 @@
 @model ProveedorModel
 
 
-
-
-
 <div class="container-search">
     <a class="back" href="Dashboard">
         <img class="img_back" src="https://img.icons8.com/ios-filled/50/000000/back.png" />Proveedores
@@ -50,8 +47,8 @@
             <td></td>
             <td></td>
             <td class="text-center">
-                <a data-toggle="modal" data-target="#exampleModalCenter" ><i class="far fa-edit fa-2x"></i></a> 
-                <a data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-trash-alt fa-2x"></i></a>
+                <a data-toggle="modal" data-target="#editar-proveedor" ><i class="far fa-edit fa-2x"></i></a> 
+                <a data-toggle="modal" data-target="#eliminar-proveedor"><i class="fas fa-trash-alt fa-2x"></i></a>
             </td>
         </tr>
         <tr>
@@ -147,6 +144,86 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-primary">Crear proveedor</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- editar -->
+<div class="modal fade" id="editar-proveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Editar Proveedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="razon_social-actual">Razón Social</label>
+                        <input type="text" class="form-control" id="razon-social-actual" placeholder="Razón Social">
+                    </div>
+                    <div class="form-group">
+                        <label for="nit-actual">NIT</label>
+                        <input type="text" class="form-control" id="nit-actual" placeholder="NIT">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion-actual">Direccion</label>
+                        <input type="text" class="form-control" id="direccion-actual" placeholder="Direccion">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone-actual">Telefono</label>
+                        <input type="tel" class="form-control" id="phone-actual" placeholder="Telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="email-actual">Email</label>
+                        <input type="tel" class="form-control" id="email-actual" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-creacion-actual">Fecha creacion</label>
+                        <input type="date" class="form-control" id="fecha-creacion-actual" placeholder="Fecha creacion">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-actualizacion-actual">Fecha actualizacion</label>
+                        <input type="date" class="form-control" id="fecha-actualizacion-actual" placeholder="Fecha actualizacion">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Actualizar proveedor</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- eliminar -->
+<div class="modal fade" id="eliminar-proveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">eliminar Proveedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mensage-eliminar">
+                       <h2>Esta seguro que quiere BORRAR el registro?</h2>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Eliminar proveedor</button>
             </div>
         </div>
     </div>
