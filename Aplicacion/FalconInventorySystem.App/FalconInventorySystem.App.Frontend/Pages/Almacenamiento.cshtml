@@ -1,52 +1,27 @@
 @page
 @model AlmacenamientoModel
 
-
-<div class="container-fluid">
-  <h3>Seleccione el tipo de consulta</h3>
-  <div class="card-group mt-3">
-  
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div type="button" class="card">
-       <a href="Lote">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="col-auto">
-               
-                  <img class="imagen"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAK+SURBVHgB7ZdPctMwFMY/OZPSBVPECfCWXbJjmZ6A8KcMO9ITNDdIcoLACRp2zKSZlBM0N0jYsK05AaKw6Exii/ciuXEdu5Zj2OWbSW1LT08/PUlPqsAOkrItIxycCegOffr0CzQw87AcKHUZoKREkcFj+bblAS89rLgDxd81iCmzZJgH5PCVUuOFlO/9CKtORHB/1MUMu0DYznr02iKjpnF80qARz1EgitCxoo4l+dAQV1Q0E1ie5kXJyyo8ku+GNdOYnGAUj4zep3AQdTylKfMZRCP6ZPzUr8lvrxCC5/qJPJnTSLobg+WAnxFCduDDTVLjYGjah/24kPz22T8DJo1FEoBo58mOOAo3anxqohBeo6TiaaGO11FNVNHaWTZ5jRlQqwj1IVIjpVB+NXVhDzsogm5bmEGqigZ1cB5/rCFowXUoJJ20kxrCmXFybxTOEvA+mLfVYrtWt6V8076DoLBnjXTB4eIdAfe1kJY8lK+fmbDrLRAN72wNkdcJgf3gZ4jIRwXVIZrW37eM6hZvY4/mrZXdPAr4r4DwUUGb9lpl9gI0PA9C5TSPyyWqSab83ZNOllNYeA9r+v20U1SoI9uGny727Jf9cxuZaHO3RWk/9212o3yBq3RCqapExpW8Zbm/LQjWjZp0yeCzAan/MxCb7Dhh+ew/CbAFYbTilM3bybcgldZEEgDrbX/RSdtsQfCeppR6TK9BVRBzFIRTCxBYvyiE2IDUYpCGTemlZds1YoD4rHCCMCBfAguiOKXz8Y4S4mPbHgUxQJBn6z3kyIDAguhu3n0gG0D3TTu+aT185Su83rH4gKPtdY6SEogIYHJZZFeDg25vvy8eHT5/Sin4BRzFOeeXmnx0sfXgrLz0Xt2+BMT/0x4i1h4i1h4iVhmIUnmCrm2Bq60zBP1XPqJHYQq2CLPfajyCo/4Cul0qT2uZVzEAAAAASUVORK5CYII=">
-                
-              </div>
-              <div class="text-xs">
-                Lote</div>
-            </div>
-          </div>
-        </div>
+<!-- Queda faltando agregar botón hacia atrás -->
+<div class="container dashboard">
+  <h3 class="text-left ml-5 mb-5">Seleccione el tipo de consulta</h3>
+    <div class="row">
+    <div class="col">
+      <div class="card-group card">
+        <a class="card-body text-decoration-none" href="Lote">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAK+SURBVHgB7ZdPctMwFMY/OZPSBVPECfCWXbJjmZ6A8KcMO9ITNDdIcoLACRp2zKSZlBM0N0jYsK05AaKw6Exii/ciuXEdu5Zj2OWbSW1LT08/PUlPqsAOkrItIxycCegOffr0CzQw87AcKHUZoKREkcFj+bblAS89rLgDxd81iCmzZJgH5PCVUuOFlO/9CKtORHB/1MUMu0DYznr02iKjpnF80qARz1EgitCxoo4l+dAQV1Q0E1ie5kXJyyo8ku+GNdOYnGAUj4zep3AQdTylKfMZRCP6ZPzUr8lvrxCC5/qJPJnTSLobg+WAnxFCduDDTVLjYGjah/24kPz22T8DJo1FEoBo58mOOAo3anxqohBeo6TiaaGO11FNVNHaWTZ5jRlQqwj1IVIjpVB+NXVhDzsogm5bmEGqigZ1cB5/rCFowXUoJJ20kxrCmXFybxTOEvA+mLfVYrtWt6V8076DoLBnjXTB4eIdAfe1kJY8lK+fmbDrLRAN72wNkdcJgf3gZ4jIRwXVIZrW37eM6hZvY4/mrZXdPAr4r4DwUUGb9lpl9gI0PA9C5TSPyyWqSab83ZNOllNYeA9r+v20U1SoI9uGny727Jf9cxuZaHO3RWk/9212o3yBq3RCqapExpW8Zbm/LQjWjZp0yeCzAan/MxCb7Dhh+ew/CbAFYbTilM3bybcgldZEEgDrbX/RSdtsQfCeppR6TK9BVRBzFIRTCxBYvyiE2IDUYpCGTemlZds1YoD4rHCCMCBfAguiOKXz8Y4S4mPbHgUxQJBn6z3kyIDAguhu3n0gG0D3TTu+aT185Su83rH4gKPtdY6SEogIYHJZZFeDg25vvy8eHT5/Sin4BRzFOeeXmnx0sfXgrLz0Xt2+BMT/0x4i1h4i1h4iVhmIUnmCrm2Bq60zBP1XPqJHYQq2CLPfajyCo/4Cul0qT2uZVzEAAAAASUVORK5CYII=">
+          <h3 class="mt-3 small-title-dashboard">Lote</h3> 
+        </a>
       </div>
     </div>
-  </a>
 
-    <div class="col-xl-3 col-md-3 mb-4">
-      <div type="button" class="card">
-        <a href="Bodega">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div class="col-auto">
-                <img class="imagen"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAeCAYAAACiyHcXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFuSURBVHgB7ZbRTcMwEIZ/p+kTUrgRwgYdIWxQqS08UiZomYAyQekE5R1QYIOO0BEygkE8RjbnIAunooqTViKIfC+OncvlT3Lx/QIeEA0pRzhw10IIKeXj1s5PaDIQ0OTGfMinDTwIfYIUeosexMxd09AbHs6dREtAJG5MRKPVu3yeV+UP4IUgNCI49YpCC2iFCK+a2EdElzMBNdcIVqZyfkGESFhAUhxBLXEAXU1YOhGWvyRCSzRCvflECXhCNE5Qm3wr5UvDB/iPFJ+jyguwn4jZT8Tu+RB5xq86c2Iae46QaDLVwHqnPEzyMztRCI2fuHIDFPqvPAztXKOf9oCkHIMHHq6/RSHl+8RuTETjm0BBlxZ94Sfy8goeULdZWfa2cqLRkH3CWkPcH+IVIrq45U835Qx3qCkiZgGpOeAEixp7Wgm+ampK1hAUxf8zXU1YOhGW1og4VqttlIe3gKz4947hFUwDw04Dq+arwX0Cug1rFfTEBEoAAAAASUVORK5CYII=">
-              </div>
-              <div class="text-xs">
-                Bodega</div>
-            </div>
-          </div>
-        </div>
+    <div class="col">
+      <div class="card-group card">
+        <a class="card-body text-decoration-none" href="Bodega">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAeCAYAAACiyHcXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFuSURBVHgB7ZbRTcMwEIZ/p+kTUrgRwgYdIWxQqS08UiZomYAyQekE5R1QYIOO0BEygkE8RjbnIAunooqTViKIfC+OncvlT3Lx/QIeEA0pRzhw10IIKeXj1s5PaDIQ0OTGfMinDTwIfYIUeosexMxd09AbHs6dREtAJG5MRKPVu3yeV+UP4IUgNCI49YpCC2iFCK+a2EdElzMBNdcIVqZyfkGESFhAUhxBLXEAXU1YOhGWvyRCSzRCvflECXhCNE5Qm3wr5UvDB/iPFJ+jyguwn4jZT8Tu+RB5xq86c2Iae46QaDLVwHqnPEzyMztRCI2fuHIDFPqvPAztXKOf9oCkHIMHHq6/RSHl+8RuTETjm0BBlxZ94Sfy8goeULdZWfa2cqLRkH3CWkPcH+IVIrq45U835Qx3qCkiZgGpOeAEixp7Wgm+ampK1hAUxf8zXU1YOhGW1og4VqttlIe3gKz4947hFUwDw04Dq+arwX0Cug1rFfTEBEoAAAAASUVORK5CYII=">
+          <h3 class="mt-3 small-title-dashboard">Bodega</h3> 
+        </a>
       </div>
     </div>
-    </a>
 
 
-  </div>
 
-</div>

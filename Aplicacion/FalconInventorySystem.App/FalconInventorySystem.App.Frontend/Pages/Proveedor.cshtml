@@ -1,40 +1,41 @@
 @page
 @model ProveedorModel
 
-
-<div class="container-search">
-    <a class="back" href="Dashboard">
-        <img class="img_back" src="https://img.icons8.com/ios-filled/50/000000/back.png" />Proveedores
-    </a>
-    
-        <div class="demo">
-            <form class="form-search">
-                <div class="input-group">
-                    <input class="form-control form-text" maxlength="80" placeholder="Buscar" size="15" type="text" />
-
-                </div>
-            </form>
-        </div>
+<td class="text-center">
+    <a data-toggle="modal" data-target="#editar-proveedor" ><i class="far fa-edit fa-2x"></i></a> 
+    <a data-toggle="modal" data-target="#eliminar-proveedor"><i class="fas fa-trash-alt fa-2x"></i></a>
+</td>
+<div class="container my-5">
+    <h2>Proveedores</h2>
+    <div class="d-flex justify-content-between">
+        <a  href="Dashboard">
+            <!-- FontAwesomw -->
+            <p>jdsakl</p>
+        </a>
         <div class="button-search">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 Crear Proveedor
             </button>
         </div>
+    </div>
+
     
+
 </div>
 
 
-<table class="table table-responsive table-bordered ">
+<div class="container">
+<table class="table table-responsive">
     <thead class="text-center">
-        <tr class="titulo">
-            <th>Nit</th>
-            <th>Nombre proveedor</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th>Fecha Creacion</th>
-            <th>Fecha Actualizacion</th>
-            <th>Acciones</th>
+        <tr class="titulo-tabla">
+            <th class="tamaño-titulo-tabla">Nit</th>
+            <th class="tamaño-titulo-tabla">Nombre proveedor</th>
+            <th class="tamaño-titulo-tabla">Direccion</th>
+            <th class="tamaño-titulo-tabla">Telefono</th>
+            <th class="tamaño-titulo-tabla">Correo</th>
+            <th class="tamaño-titulo-tabla">Fecha Creacion</th>
+            <th class="tamaño-titulo-tabla">Fecha Actualizacion</th>
+            <th class="tamaño-titulo-tabla">Acciones</th>
         </tr>
     </thead>
     <tbody class="text-center">
@@ -46,10 +47,7 @@
             <td>verdde3991@gmail.com</td>
             <td></td>
             <td></td>
-            <td class="text-center">
-                <a data-toggle="modal" data-target="#editar-proveedor" ><i class="far fa-edit fa-2x"></i></a> 
-                <a data-toggle="modal" data-target="#eliminar-proveedor"><i class="fas fa-trash-alt fa-2x"></i></a>
-            </td>
+           
         </tr>
         <tr>
             <td>123141351</td>
@@ -77,26 +75,9 @@
         </tr>
     </tbody>
 </table>
+</div>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -131,6 +112,7 @@
                         <label for="email">Email</label>
                         <input type="tel" class="form-control" id="email" placeholder="Email">
                     </div>
+                    <!-- 
                     <div class="form-group">
                         <label for="frecha_creacion">Fecha creacion</label>
                         <input type="date" class="form-control" id="fecha_creacion" placeholder="Fecha creacion">
@@ -139,6 +121,7 @@
                         <label for="frecha_actualizacion">Fecha actualizacion</label>
                         <input type="date" class="form-control" id="fecha_actualizacion" placeholder="Fecha actualizacion">
                     </div>
+                    -->
                 </form>
             </div>
             <div class="modal-footer">
@@ -180,15 +163,15 @@
                         <input type="tel" class="form-control" id="phone-actual" placeholder="Telefono">
                     </div>
                     <div class="form-group">
-                        <label for="email-actual">Email</label>
+                        <label for="email-actual">Correo</label>
                         <input type="tel" class="form-control" id="email-actual" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <label for="fecha-creacion-actual">Fecha creacion</label>
+                        <label for="fecha-creacion-actual">Fecha creación</label>
                         <input type="date" class="form-control" id="fecha-creacion-actual" placeholder="Fecha creacion">
                     </div>
                     <div class="form-group">
-                        <label for="fecha-actualizacion-actual">Fecha actualizacion</label>
+                        <label for="fecha-actualizacion-actual">Fecha actualización</label>
                         <input type="date" class="form-control" id="fecha-actualizacion-actual" placeholder="Fecha actualizacion">
                     </div>
                 </form>
@@ -209,7 +192,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">eliminar Proveedor</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Proveedor</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -217,7 +200,7 @@
             <div class="modal-body">
                 <form>
                     <div class="mensage-eliminar">
-                       <h2>Esta seguro que quiere BORRAR el registro?</h2>
+                       <p>¿Esta seguro que desea <span>borrar</span> el registro?</p>
                     </div>
                 </form>
             </div>

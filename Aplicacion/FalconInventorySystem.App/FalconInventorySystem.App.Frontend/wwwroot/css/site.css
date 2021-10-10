@@ -1,7 +1,16 @@
-﻿html {
+﻿/* Configuracion preliminares */
+
+html {
   position: relative;
   min-height: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px, se usan los rem para trabajar**/
 }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+} /* Se elimina el box sizing por defecto */ 
+
 
 body {
   margin: 0;
@@ -9,8 +18,10 @@ body {
   font-family: sans-serif;
   background-color: #f1f1f1;
   text-align: center;
+  font-size: 1.6rem;
 }
 
+/* Estilos para el login */
 .card:hover {
   margin-bottom: 20px;
   border: none;
@@ -67,7 +78,7 @@ body {
 .user i {
   position: absolute;
   left: 45px;
-  top: 12px;
+  top: 22px;
   color: #0f1055;
 }
 
@@ -78,7 +89,7 @@ body {
 .password i {
   position: absolute;
   left: 45px;
-  top: 12px;
+  top: 22px;
   color: #0f1055;
 }
 
@@ -108,6 +119,7 @@ body {
   height: 30px;
 }
 
+/* Footer Styles */
 .footer {
   position: absolute;
   bottom: 0;
@@ -121,210 +133,25 @@ body {
   padding: 50px 50px 50px 50px;
 }
 
-.h1,
-h1 {
+.container .dashboard{
+    margin-top:15rem;
+}
+
+.small-title-dashboard{
   color: #0f1055;
-  font-size: 40px;
-  border-radius: 0px;
+  font-weight: bold;
 }
 
 
-.col {
-  text-align: center;
-}
-
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 300;
-}
-
-.container-fluid,
-h3 {
-  text-align: left;
-  margin-top: 100px;
-}
-
-.text-xs {
-  color: #0f1055;
-}
-/*style tabla provvedor */
-table {
-  margin-top: 50px;
-  margin: center;
-  border: solid #000;
-  background-color: #fff;
-}
-th,
-td {
-  width: 25%;
-  text-align: center;
-  vertical-align: top;
-  border: 1px solid #000;
-  color: #0f1055;
-}
-.titulo {
+/*style table*/
+.titulo-tabla {
   background-color: #a1a1ae;
-}
-
-.search1 {
-  margin-top: 100px;
-  margin-right: 10px;
-  margin-left: 350px;
-  width: 150px;
-  height: 35px;
-  border-radius: 10px;
-}
-
-.AddProveedor {
-  background: #0f1055;
-  text-align: center;
-  border: 2px solid #0f1055;
-  outline: none;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  width: 150px;
-  margin-left: 350px;
-  height: 35px;
-}
-
-.AddProveedor:active {
-  box-shadow: 1px 5px 10px #000;
-}
-
-.mensage-eliminar{
-  text-align: center;
-  
-  
-}
-
-/*
-button,
-input {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  margin-left: 10px;
-}
-*/
-
-.atras {
-  border-radius: 20px;
-  border: 1px transparent #000;
-  margin-left: 10px;
-  width: 25px;
-  height: 25px;
-
-  margin-bottom: 20px;
-
-  position: relative;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-
-  box-shadow: 1px 5px 10px#00000029;
-  cursor: pointer;
-}
-
-.atra,
-h5 {
-  color: #0f1055;
-  margin-left: 10px;
-}
-
-.btn-outline-success {
-  width: 150px;
-  height: 35px;
-  padding: 5px;
-  color: #fafafa;
-  border-color: #0f1055;
-  background-color: #0f1055;
-  margin-left: 10px;
-}
-/*
-.form-control {
-  margin-left: 550px;
-}
-*/
-.btn-outline-success:hover {
-  background-color: #ffffff;
-  color: #0f1055;
-  border-color: #0f1055;
-}
-.btn-outline-success:active {
-  background-color: #ffffff;
-  color: #0f1055;
-  border-color: #0f1055;
-}
-.form-inline {
-  margin-top: 100px;
-}
-
-.pagination {
-  margin-left: 500px;
-}
-
-.container-search{
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  margin-top: 6rem;
+  border: solid #000;
 
 }
 
-.demo {
-  flex-basis: 25%;
-  margin-left: 33rem;
-}
+.tamaño-titulo-tabla{
+  height: 10rem;
+  border-style: solid;
 
-.button-search{
-  margin-left: 2%;
-
- 
-}
-.btn.btn-primary{
-  background-color: #0f1055;
-}
-.back{
-  margin-top: 10px;
-  align-self: flex-start;
-
-}
-
-.search-der{
-  align-self: flex-end;
-}
-.img_back{
- height: 1.5em;
-
-}
-.modal-header{
-  background-color: #0f1055;
-}
-.modal-title,.close{
-  color:#fff
-}
-.close:hover{
-  color:rgb(216, 213, 213)
-}
-
-.form-group{
- text-align:left;
- 
-}
-label{
-  margin-left: 10px;
-}
-.btn-secondary{
-  background-color: #0f1055;
-}
-
-/*lote */
-.form-select{
-  margin-left: 5em;
 }
