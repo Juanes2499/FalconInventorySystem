@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nfbP1WLe7x81KAABnzrRZ/7BByMCcHJtfiaqbcrXLLe7BPJkUGWNMiGtx/XkbP4C/vPkg6LTBvic4oHtSGjyWg==",
+  "dgSpecHash": "t7DB7Bqy6Md4Pb7M+t+/pGgQCPNc5xG8nPHyYpSlKj+mJJUGTlqukX2KireH+XuvQPEcsoGaJg6LkIYSrdrXmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\ProyectoTransversal\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juane\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\juane\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

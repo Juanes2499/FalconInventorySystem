@@ -1,0 +1,13 @@
+﻿@page
+@model FalnconInventorySystem.App.Frontend.ProveedoresDeleteModel
+
+<form method="post">
+    <input type="hidden" asp-for="Supplier.Id" />
+    <div class="form-group">
+        <label for="razon_social">¿Esta seguro que desea eliminar el provedor @Model.Supplier.SupplierName?</label>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Si, estoy seguro</button>
+    </div>
+</form>
+<button class="btn btn-secondary" href="/Proveedor">No, cancelar</button>

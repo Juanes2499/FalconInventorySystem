@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FalconInventorySystem.App.Persistence;
+using FalconInventorySystem.App.Persistence.Interfaces;
+using FalconInventorySystem.App.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +26,10 @@ namespace FalconInventorySystem.App.Frontend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Services persistence
+            services.AddScoped<AppDbContext>();
+            services.AddScoped<IRepositorySupplier, RepositorySupplier>();
+
             services.AddRazorPages();
         }
 

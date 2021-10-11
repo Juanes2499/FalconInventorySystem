@@ -142,16 +142,11 @@ body {
   font-weight: bold;
 }
 
-
-/*style table*/
-.titulo-tabla {
+.header-tabla{
   background-color: #a1a1ae;
-  border: solid #000;
-
 }
 
-.tamaño-titulo-tabla{
-  height: 10rem;
-  border-style: solid;
-
+.header-tabla-titulo{
+  font-family: Arial;
+  color: #0F1055;
 }

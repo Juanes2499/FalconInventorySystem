@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\ProyectoTransversal\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {}
+    "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\ProyectoTransversal\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {
+    "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\ProyectoTransversal\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
         "projectName": "FalconInventorySystem.App.Domain",
-        "projectPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\ProyectoTransversal\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
+        "projectPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
         "packagesPath": "C:\\Users\\juane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\ProyectoTransversal\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\obj\\",
+        "outputPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\juane\\AppData\\Roaming\\NuGet\\NuGet.Config",
