@@ -4,22 +4,46 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using FalconInventorySystem.App.Domain.Entities;
+using FalconInventorySystem.App.Persistence.Interfaces;
 
 namespace FalconInventorySystem.App.Frontend.Pages
 {
     public class ProductoModel : PageModel
     {
-        private readonly ILogger<ProductoModel> _logger;
+       private readonly IRepositoryProduct repositoryProduct;
 
-        public ProductoModel(ILogger<ProductoModel> logger)
+       [BindProperty]
+        public Product Product { get; set; }
+        public List<Product> ProductsList { get; set; }
+
+        public ProductoModel (IRepositoryProduct repositoryProduct)
         {
-            _logger = logger;
+            this.repositoryProduct = repositoryProduct;
         }
-
+/*
+        public IEnumerable<Product> GetProducts()
+        {
+            var productList = repositoryProduct.GetAllProducts();
+            return productList;
+        }
+        
         public void OnGet()
         {
-
+            ProductsList = new List<Product>();
+            ProductsList.AddRange(GetProducts());  
         }
+
+        public IActionResult OnPost()
+        {
+            var newProduct = Product;
+            var productCreated = repositoryProduct.CreateProduct(newProduct);
+            Product = null;
+            ProductsList = new List<Product>();
+            ProductsList.AddRange(GetProducts());
+            return RedirectToPage("Producto");
+        }
+*/
+
     }
 }

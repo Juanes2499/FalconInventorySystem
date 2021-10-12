@@ -125,7 +125,7 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 40px; /* Vertically center the text there */
 }
 
 /*style dashboard */
@@ -149,4 +149,44 @@ body {
 .header-tabla-titulo{
   font-family: Arial;
   color: #0F1055;
+}
+
+.back-dashboard img{
+  height: 15px;
+}
+
+.container{
+  margin-top:5%;
+}
+.btn-primary{
+ background-color: #0f1055;
+}
+.back-dashboard{
+  color: #0f1055;
+}
+
+.table-body{
+  background-color: #ffff
+}
+.modal-header{
+  background-color: #0f1055;
+  color: #fff
+}
+.close{
+  color: #ffffff;
+}
+
+.form-group{
+  text-align: left;
+}
+
+.modal-body{
+  margin: 1rem;
+}
+
+.modal-body-edit{
+  margin: 5rem;
+}
+.form-confirm{
+  text-align: center;
 }
