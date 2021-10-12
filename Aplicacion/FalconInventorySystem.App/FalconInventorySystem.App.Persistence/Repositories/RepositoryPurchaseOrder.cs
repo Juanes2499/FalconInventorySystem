@@ -18,30 +18,30 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<PurchaseOrder> CreatePurchaseOrder(PurchaseOrder purchaseOrder)
+        public PurchaseOrder CreatePurchaseOrder(PurchaseOrder purchaseOrder)
         {
             var purchaseOrderCreate = appDbContext.PurchaseOrders.Add(purchaseOrder);
-            await appDbContext.SaveChangesAsync();
+            appDbContext.SaveChanges();
             return purchaseOrderCreate.Entity;
         }
 
-        public async Task<IEnumerable<PurchaseOrder>> GetAllPurchaseOrders()
+        public IEnumerable<PurchaseOrder> GetAllPurchaseOrders()
         {
-            var purchaseOrders = await appDbContext.PurchaseOrders.ToListAsync();
+            var purchaseOrders = appDbContext.PurchaseOrders;
             return purchaseOrders;
         }
 
-        public async Task<PurchaseOrder> GetPurchaseOrderById(int id)
+        public PurchaseOrder GetPurchaseOrderById(int id)
         {
-            var purchaseOrder = await appDbContext.PurchaseOrders.FirstOrDefaultAsync(x => x.Id == id);
+            var purchaseOrder = appDbContext.PurchaseOrders.FirstOrDefault(x => x.Id == id);
             return purchaseOrder;
         }
 
-        public async Task<Boolean> UpdatePurchaseOrder(PurchaseOrder purchaseOrder)
+        public Boolean UpdatePurchaseOrder(PurchaseOrder purchaseOrder)
         {
             var updated = false;
 
-            var purchaseOrderFound = await appDbContext.PurchaseOrders.FirstOrDefaultAsync(x => x.Id == purchaseOrder.Id);
+            var purchaseOrderFound = appDbContext.PurchaseOrders.FirstOrDefault(x => x.Id == purchaseOrder.Id);
             if (purchaseOrderFound != null)
             {
                 purchaseOrderFound.NumberOrder = purchaseOrder.NumberOrder;
@@ -51,30 +51,30 @@ namespace FalconInventorySystem.App.Persistence.Repositories
                 purchaseOrderFound.Tax = purchaseOrder.Tax;
                 purchaseOrderFound.ModificationDate = DateTime.Now;
                 appDbContext.PurchaseOrders.Update(purchaseOrderFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeletePurchaseOrder(int id)
+        public Boolean DeletePurchaseOrder(int id)
         {
             var deleted = false;
 
-            var purchaseOrderFound = await appDbContext.PurchaseOrders.FirstOrDefaultAsync(x => x.Id == id);
+            var purchaseOrderFound = appDbContext.PurchaseOrders.FirstOrDefault(x => x.Id == id);
             if (purchaseOrderFound != null)
             {
-                var purchaseOrderItemsFound = await appDbContext.PurchaseOrderItems.Where(x => x.PurchaseOrderId == id).ToListAsync();
+                var purchaseOrderItemsFound = appDbContext.PurchaseOrderItems.Where(x => x.PurchaseOrderId == id).ToList();
 
-                purchaseOrderItemsFound.ForEach(async z =>
+                purchaseOrderItemsFound.ForEach(z =>
                 {
                     appDbContext.PurchaseOrderItems.Remove(z);
-                    await appDbContext.SaveChangesAsync();
+                    appDbContext.SaveChanges();
                 });
 
                 appDbContext.PurchaseOrders.Remove(purchaseOrderFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

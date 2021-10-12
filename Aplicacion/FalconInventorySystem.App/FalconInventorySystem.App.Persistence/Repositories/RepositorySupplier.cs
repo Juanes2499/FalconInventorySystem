@@ -5,6 +5,7 @@ using FalconInventorySystem.App.Domain.Entities;
 using FalconInventorySystem.App.Persistence.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace FalconInventorySystem.App.Persistence.Repositories
 {
@@ -17,40 +18,24 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<IEnumerable<Supplier>> GetSuppliersAll()
+        public IEnumerable<Supplier> GetSuppliersAll()
         {
-            var SuppliersListed = new List<Supplier>();
-            try
-            {
-                SuppliersListed = await appDbContext.Suppliers.ToListAsync();
-                return SuppliersListed;
-            }
-            catch
-            {
-                return SuppliersListed;
-            }
-            
+            var SuppliersListed = appDbContext.Suppliers;
+            return SuppliersListed;            
         }
 
-        public async Task<Supplier> AddSuppliers(Supplier supplier)
+        public Supplier AddSuppliers(Supplier supplier)
         {
-            try
-            {
-                var SuppliersCreate = appDbContext.Suppliers.Add(supplier);
-                await appDbContext.SaveChangesAsync();
-                return SuppliersCreate.Entity;
-            }
-            catch
-            {
-                return new Supplier();
-            };
+            var SuppliersCreate = appDbContext.Suppliers.Add(supplier);
+            appDbContext.SaveChanges();
+            return SuppliersCreate.Entity;
         }
 
-        public async Task<Supplier> GetSupplierById(int id)
+        public Supplier GetSupplierById(int id)
         {
             try
             {
-                var supplier = await appDbContext.Suppliers.FirstOrDefaultAsync(x => x.Id == id);
+                var supplier = appDbContext.Suppliers.FirstOrDefault(x => x.Id == id);
                 return supplier;
             }
             catch
@@ -59,11 +44,11 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             }
         }
 
-        public async Task<Boolean> UpdateSupplier(Supplier supplier)
+        public Boolean UpdateSupplier(Supplier supplier)
         {
             var updated = false;
 
-            var SupplierFound = await appDbContext.Suppliers.FirstOrDefaultAsync(x => x.Id == supplier.Id);
+            var SupplierFound = appDbContext.Suppliers.FirstOrDefault(x => x.Id == supplier.Id);
             if(SupplierFound != null)
             {
                 SupplierFound.SupplierName = supplier.SupplierName;
@@ -73,22 +58,22 @@ namespace FalconInventorySystem.App.Persistence.Repositories
                 SupplierFound.Email = supplier.Email;
                 SupplierFound.ModificationDate = DateTime.Now;
                 appDbContext.Suppliers.Update(SupplierFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeleteSupplier(int id)
+        public Boolean DeleteSupplier(int id)
         {
             var deleted = false;
 
-            var SupplierFound = await appDbContext.Suppliers.FirstOrDefaultAsync(x => x.Id == id);
+            var SupplierFound = appDbContext.Suppliers.FirstOrDefault(x => x.Id == id);
             if (SupplierFound != null)
             {
                 appDbContext.Suppliers.Remove(SupplierFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

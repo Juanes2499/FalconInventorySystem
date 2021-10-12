@@ -18,30 +18,30 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<PurchaseOrderItem> CreatePurchaseOrderItem(PurchaseOrderItem purchaseOrderItem)
+        public PurchaseOrderItem CreatePurchaseOrderItem(PurchaseOrderItem purchaseOrderItem)
         {
             var purchaseOrderItemCreate = appDbContext.PurchaseOrderItems.Add(purchaseOrderItem);
-            await appDbContext.SaveChangesAsync();
+            appDbContext.SaveChanges();
             return purchaseOrderItemCreate.Entity;
         }
 
-        public async Task<IEnumerable<PurchaseOrderItem>> GetAllPurchaseOrderItems()
+        public IEnumerable<PurchaseOrderItem> GetAllPurchaseOrderItems()
         {
-            var purchaseOrderItems = await appDbContext.PurchaseOrderItems.ToListAsync();
+            var purchaseOrderItems = appDbContext.PurchaseOrderItems;
             return purchaseOrderItems;
         }
 
-        public async Task<PurchaseOrderItem> GetPurchaseOrderItemById(int id)
+        public PurchaseOrderItem GetPurchaseOrderItemById(int id)
         {
-            var purchaseOrderItem = await appDbContext.PurchaseOrderItems.FirstOrDefaultAsync(x => x.Id == id);
+            var purchaseOrderItem = appDbContext.PurchaseOrderItems.FirstOrDefault(x => x.Id == id);
             return purchaseOrderItem;
         }
 
-        public async Task<Boolean> UpdatePurchaseOrderItem(PurchaseOrderItem purchaseOrderItem)
+        public Boolean UpdatePurchaseOrderItem(PurchaseOrderItem purchaseOrderItem)
         {
             var updated = false;
 
-            var purchaseOrderItemFound = await appDbContext.PurchaseOrderItems.FirstOrDefaultAsync(x => x.Id == purchaseOrderItem.Id);
+            var purchaseOrderItemFound = appDbContext.PurchaseOrderItems.FirstOrDefault(x => x.Id == purchaseOrderItem.Id);
             if (purchaseOrderItemFound != null)
             {
                 purchaseOrderItemFound.ProductId = purchaseOrderItem.ProductId;
@@ -53,22 +53,22 @@ namespace FalconInventorySystem.App.Persistence.Repositories
                 purchaseOrderItemFound.ModificationDate = DateTime.Now;
 
                 appDbContext.PurchaseOrderItems.Update(purchaseOrderItemFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeletePurchaseOrderItem(int id)
+        public Boolean DeletePurchaseOrderItem(int id)
         {
             var deleted = false;
 
-            var purchaseOrderItemFound = await appDbContext.PurchaseOrderItems.FirstOrDefaultAsync(x => x.Id == id);
+            var purchaseOrderItemFound = appDbContext.PurchaseOrderItems.FirstOrDefault(x => x.Id == id);
             if (purchaseOrderItemFound != null)
             {
                 appDbContext.PurchaseOrderItems.Remove(purchaseOrderItemFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

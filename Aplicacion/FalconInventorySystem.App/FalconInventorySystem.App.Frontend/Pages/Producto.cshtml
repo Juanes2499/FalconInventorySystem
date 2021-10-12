@@ -1,0 +1,133 @@
+@page
+@model ProductoModel
+
+
+
+<div class="container my-5">
+
+    <div class="d-flex justify-content-between">
+        <a class="back-dashboard" href="Dashboard">
+            <img src="https://img.icons8.com/ios-filled/50/000000/back.png" />
+            Producto
+        </a>
+        <div class="button-search row">
+
+            <div class="input-append">
+                <input type="text" class="input-medium search-query" name="s" placeholder="Search" value="">
+            </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Crear">
+                Crear Producto
+            </button>
+        </div>
+    </div>
+
+    </br>
+
+    <div>
+        <table class="table table-responsive-xl">
+            <thead class="header-tabla">
+                <tr>
+                    <th class="header-tabla-titulo">Nombre Producto</th>
+                    <th class="header-tabla-titulo">descripcion</th>
+                    <th class="header-tabla-titulo">Marca</th>
+                    <th class="header-tabla-titulo">Categoria</th>
+                    <th class="header-tabla-titulo">Fecha Creacion</th>
+                    <th class="header-tabla-titulo">Fecha Actualizacion</th>
+                    <th class="header-tabla-titulo">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                @foreach (var product in Model.ProductsList)
+                {
+                    <tr>
+                        <td>@product.ProductName</td>
+                        <td>@product.Description</td>
+                        <td>@product.BrandId</td>
+                        <td>@product.CategoryId</td>
+                        <td>@product.CreationDate</td>
+                        <td>@product.ModificationDate</td>
+
+                        <td class="text-center">
+                            <a asp-page="/ProveedoresEdit" asp-route-supplierId="@product.Id"><i
+                                class="far fa-edit fa-2x"></i></a>
+                            <a asp-page="/ProveedoresDelete" asp-route-supplierId="@product.Id"><i
+                                class="fas fa-trash-alt fa-2x"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<!--
+<div class="modal fade" id="Crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Crear Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <input type="hidden" asp-for="Supplier.Id" />
+                    <div class="form-group">
+                        <label for="nombre-producto">Nombre producto</label>
+                        <input type="text" class="form-control" asp-for="Product.ProductName"
+                            placeholder="Nombre Producto">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" asp-for="product.Description" 
+                            placeholder="Ingrese informacion adicional">
+                    </div>
+                    <div class="form-group">
+                        <label for="marca">Marca</label>
+                        <input type="text" class="form-control" asp-for="Product.BrandId" placeholder="Marca">
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <input type="tel" class="form-control" asp-for="Product.CategoryId" placeholder="Categoria">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Crear proveedor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<!-- eliminar -->
+<!--
+<div class="modal fade" id="eliminar-proveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Proveedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mensage-eliminar">
+                        <p>¿Esta seguro que desea <span>borrar</span> el registro?</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Eliminar proveedor</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->

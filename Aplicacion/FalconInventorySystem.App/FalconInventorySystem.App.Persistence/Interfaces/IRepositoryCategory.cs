@@ -8,10 +8,10 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
 {
     public interface IRepositoryCategory
     {
-        Task<Category> CreateCategory(Category category);
-        Task<IEnumerable<Category>> GetAllCategories();
-        Task<Category> GetCategoryById(int id);
-        Task<Boolean> UpdateCategory(Category category);
-        Task<Boolean> DeleteCategory(int id);
+        Category CreateCategory(Category category);
+        IEnumerable<Category> GetAllCategories();
+        Category GetCategoryById(int id);
+        Boolean UpdateCategory(Category category);
+        Boolean DeleteCategory(int id);
     }
 }

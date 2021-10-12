@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace FalconInventorySystem.App.Frontend.Pages
 {
-    public class ProveedorModel : PageModel
+    public class AlmacenamientoModel : PageModel
     {
-        private readonly ILogger<ProveedorModel> _logger;
+        private readonly ILogger<AlmacenamientoModel> _logger;
 
-        public ProveedorModel(ILogger<ProveedorModel> logger)
+        public AlmacenamientoModel(ILogger<AlmacenamientoModel> logger)
         {
             _logger = logger;
         }

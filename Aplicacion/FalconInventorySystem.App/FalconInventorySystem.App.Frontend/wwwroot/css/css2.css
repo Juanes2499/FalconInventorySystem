@@ -1,0 +1,279 @@
+/* Configuracion preliminares */
+
+html {
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+    font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px, se usan los rem para trabajar**/
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  } /* Se elimina el box sizing por defecto */ 
+  
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  
+  /* Estilos para el login */
+  .card:hover {
+    margin-bottom: 20px;
+    border: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+    box-shadow: 1px 5px 10px#00000029;
+    cursor: pointer;
+  }
+  
+  .box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px;
+    box-shadow: 1px 5px 10px #00000029;
+    background-color: #ffffff;
+  }
+  
+  .box input[type="text"],
+  .box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 18px 30px;
+    text-align: left;
+    box-shadow: 1px 5px 10px#00000029;
+    border-width: 0.5px;
+    border-color: #ecefeb;
+    border-style: solid;
+    width: 350px;
+    outline: none;
+    color: black;
+    border-radius: 10px;
+  }
+  
+  /* Icons FontAwesome for login */
+  
+  .user {
+    position: relative;
+  }
+  
+  .user i {
+    position: absolute;
+    left: 45px;
+    top: 22px;
+    color: #0f1055;
+  }
+  
+  .password {
+    position: relative;
+  }
+  
+  .password i {
+    position: absolute;
+    left: 45px;
+    top: 22px;
+    color: #0f1055;
+  }
+  
+  .box h2 {
+    color: #0f1055;
+    font-size: 20px;
+  }
+  
+  .text-muted span {
+    color: #0f1055;
+  }
+  
+  .box input[type="submit"] {
+    border: 0;
+    background: #0f1055;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #0f1055;
+    padding: 0px 40px;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 350px;
+  
+    height: 30px;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+  }
+  
+  /*style dashboard */
+  .card-body {
+    padding: 50px 50px 50px 50px;
+  }
+  
+  /*
+  .h1,
+  h1 {
+    color: #0f1055;
+    font-size: 40px;
+    border-radius: 0px;
+  }
+  */
+  
+  
+  
+  .container-fluid,
+  h3 {
+    text-align: left;
+    margin-top: 100px;
+  }
+  
+  
+  /*style tabla proveedor */
+  table {
+    margin-top: 50px;
+    border: solid #000;
+    background-color: #fff;
+  }
+  th,
+  td {
+    color: #0f1055;
+  }
+  .titulo {
+    background-color: #a1a1ae;
+  }
+  
+  
+  .atras {
+    border-radius: 20px;
+    border: 1px transparent #000;
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+  
+    margin-bottom: 20px;
+  
+    position: relative;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+  
+    box-shadow: 1px 5px 10px#00000029;
+    cursor: pointer;
+  }
+  
+  .atra,
+  h5 {
+    color: #0f1055;
+    margin-left: 10px;
+  }
+  
+  .btn-outline-success {
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    color: #fafafa;
+    border-color: #0f1055;
+    background-color: #0f1055;
+    margin-left: 10px;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #ffffff;
+    color: #0f1055;
+    border-color: #0f1055;
+  }
+  .btn-outline-success:active {
+    background-color: #ffffff;
+    color: #0f1055;
+    border-color: #0f1055;
+  }
+  .form-inline {
+    margin-top: 100px;
+  }
+  
+  .pagination {
+    margin-left: 500px;
+  }
+  
+  .container-search{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    margin-top: 6rem;
+  
+  }
+  
+  .demo {
+    flex-basis: 25%;
+    margin-left: 33rem;
+  }
+  
+  .button-search{
+    margin-left: 2%;
+  
+   
+  }
+  .btn.btn-primary{
+    background-color: #0f1055;
+  }
+  .back{
+    margin-top: 10px;
+    align-self: flex-start;
+  
+  }
+  
+  .search-der{
+    align-self: flex-end;
+  }
+  .img_back{
+   height: 1.5em;
+  
+  }
+  .modal-header{
+    background-color: #0f1055;
+  }
+  .modal-title,.close{
+    color:#fff
+  }
+  .close:hover{
+    color:rgb(216, 213, 213)
+  }
+  
+  .form-group{
+   text-align:left;
+   
+  }
+  label{
+    margin-left: 10px;
+  }
+  .btn-secondary{
+    background-color: #0f1055;
+  }
+  
+  /*lote */
+  .form-select{
+    margin-left: 5em;
+  }
+  

@@ -8,10 +8,10 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
 {
     public interface IRepositoryBrand
     {
-        Task<Brand> CreateBrand(Brand brand);
-        Task<IEnumerable<Brand>> GetAllBrands();
-        Task<Brand> GetBrandById(int id);
-        Task<Boolean> UpdateBrand(Brand brand);
-        Task<Boolean> DeleteBrand(int id);
+        Brand CreateBrand(Brand brand);
+        IEnumerable<Brand> GetAllBrands();
+        Brand GetBrandById(int id);
+        Boolean UpdateBrand(Brand brand);
+        Boolean DeleteBrand(int id);
     }
 }
