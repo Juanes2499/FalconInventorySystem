@@ -8,10 +8,10 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
 {
     public interface IRepositoryProduct
     {
-        Task<Product> CreateProduct(Product product);
-        Task<IEnumerable<Product>> GetAllProducts();
-        Task<Product> GetProductById(int id);
-        Task<Boolean> UpdateProduct(Product product);
-        Task<Boolean> DeleteProduct(int id);
+        Product CreateProduct(Product product);
+        IEnumerable<Product> GetAllProducts();
+        Product GetProductById(int id);
+        Boolean UpdateProduct(Product product);
+        Boolean DeleteProduct(int id);
     }
 }

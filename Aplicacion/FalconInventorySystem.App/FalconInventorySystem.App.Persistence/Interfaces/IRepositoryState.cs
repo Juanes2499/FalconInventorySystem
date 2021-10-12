@@ -8,10 +8,10 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
 {
     public interface IRepositoryState
     {
-        Task<State> CreateState(State state);
-        Task<IEnumerable<State>> GetAllStates();
-        Task<State> GetStateById(int id);
-        Task<Boolean> UpdateState(State state);
-        Task<Boolean> DeleteState(int id);
+        State CreateState(State state);
+        IEnumerable<State> GetAllStates();
+        State GetStateById(int id);
+        Boolean UpdateState(State state);
+        Boolean DeleteState(int id);
     }
 }

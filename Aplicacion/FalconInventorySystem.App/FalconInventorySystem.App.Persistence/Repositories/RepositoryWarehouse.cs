@@ -18,30 +18,30 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<Warehouse> CreateWarehouse(Warehouse warehouse)
+        public Warehouse CreateWarehouse(Warehouse warehouse)
         {
             var warehouseCreate = appDbContext.Warehouses.Add(warehouse);
-            await appDbContext.SaveChangesAsync();
+            appDbContext.SaveChanges();
             return warehouseCreate.Entity;
         }
 
-        public async Task<IEnumerable<Warehouse>> GetAllWarehouses()
+        public IEnumerable<Warehouse> GetAllWarehouses()
         {
-            var warehouses = await appDbContext.Warehouses.ToListAsync();
+            var warehouses = appDbContext.Warehouses;
             return warehouses;
         }
 
-        public async Task<Warehouse> GetWarehouseById(int id)
+        public Warehouse GetWarehouseById(int id)
         {
-            var warehouseFound = await appDbContext.Warehouses.FirstOrDefaultAsync(x => x.Id == id);
+            var warehouseFound = appDbContext.Warehouses.FirstOrDefault(x => x.Id == id);
             return warehouseFound;
         }
 
-        public async Task<Boolean> UpdateWarehouse(Warehouse warehouse)
+        public Boolean UpdateWarehouse(Warehouse warehouse)
         {
             var updated = false;
 
-            var warehouseFound = await appDbContext.Warehouses.FirstOrDefaultAsync(x => x.Id == warehouse.Id);
+            var warehouseFound = appDbContext.Warehouses.FirstOrDefault(x => x.Id == warehouse.Id);
             if (warehouseFound != null)
             {
                 warehouseFound.MaximumCapacity = warehouse.MaximumCapacity;
@@ -50,22 +50,22 @@ namespace FalconInventorySystem.App.Persistence.Repositories
                 warehouseFound.ModificationDate = DateTime.Now;
 
                 appDbContext.Warehouses.Update(warehouseFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeleteWarehouse(int id)
+        public Boolean DeleteWarehouse(int id)
         {
             var deleted = false;
 
-            var warehouseFound = await appDbContext.Warehouses.FirstOrDefaultAsync(x => x.Id == id);
+            var warehouseFound = appDbContext.Warehouses.FirstOrDefault(x => x.Id == id);
             if (warehouseFound != null)
             {
                 appDbContext.Warehouses.Remove(warehouseFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

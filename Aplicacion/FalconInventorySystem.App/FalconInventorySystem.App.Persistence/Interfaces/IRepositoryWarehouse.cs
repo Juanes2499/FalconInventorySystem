@@ -8,10 +8,10 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
 {
     public interface IRepositoryWarehouse
     {
-        Task<Warehouse> CreateWarehouse(Warehouse warehouse);
-        Task<IEnumerable<Warehouse>> GetAllWarehouses();
-        Task<Warehouse> GetWarehouseById(int id);
-        Task<Boolean> UpdateWarehouse(Warehouse warehouse);
-        Task<Boolean> DeleteWarehouse(int id);
+        Warehouse CreateWarehouse(Warehouse warehouse);
+        IEnumerable<Warehouse> GetAllWarehouses();
+        Warehouse GetWarehouseById(int id);
+        Boolean UpdateWarehouse(Warehouse warehouse);
+        Boolean DeleteWarehouse(int id);
     }
 }

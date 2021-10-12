@@ -18,52 +18,52 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<Brand> CreateBrand(Brand brand)
+        public Brand CreateBrand(Brand brand)
         {
             var brandCreate = appDbContext.Brands.Add(brand);
-            await appDbContext.SaveChangesAsync();
+            appDbContext.SaveChanges();
             return brandCreate.Entity;
         }
 
-        public async Task<IEnumerable<Brand>> GetAllBrands()
+        public IEnumerable<Brand> GetAllBrands()
         {
-            var brands = await appDbContext.Brands.ToListAsync();
+            var brands = appDbContext.Brands;
             return brands;
         }
 
-        public async Task<Brand> GetBrandById(int id)
+        public Brand GetBrandById(int id)
         {
-            var brandFound = await appDbContext.Brands.FirstOrDefaultAsync(x => x.Id == id);
+            var brandFound = appDbContext.Brands.FirstOrDefault(x => x.Id == id);
             return brandFound;
         }
 
-        public async Task<Boolean> UpdateBrand(Brand brand)
+        public Boolean UpdateBrand(Brand brand)
         {
             var updated = false;
 
-            var brandFound = await appDbContext.Brands.FirstOrDefaultAsync(x => x.Id == brand.Id);
+            var brandFound = appDbContext.Brands.FirstOrDefault(x => x.Id == brand.Id);
             if (brandFound != null)
             {
                 brandFound.BrandName = brand.BrandName;
                 brandFound.ModificationDate = DateTime.Now;
 
                 appDbContext.Brands.Update(brandFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeleteBrand(int id)
+        public Boolean DeleteBrand(int id)
         {
             var deleted = false;
 
-            var brandFound = await appDbContext.Brands.FirstOrDefaultAsync(x => x.Id == id);
+            var brandFound = appDbContext.Brands.FirstOrDefault(x => x.Id == id);
             if (brandFound != null)
             {
                 appDbContext.Brands.Remove(brandFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

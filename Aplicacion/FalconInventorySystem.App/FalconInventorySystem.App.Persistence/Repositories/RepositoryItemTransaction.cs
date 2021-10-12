@@ -19,30 +19,30 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<ItemTransaction> CreateItemTransaction(ItemTransaction itemTransaction)
+        public ItemTransaction CreateItemTransaction(ItemTransaction itemTransaction)
         {
             var itemTransactionCreate = appDbContext.ItemTransactions.Add(itemTransaction);
-            await appDbContext.SaveChangesAsync();
+            appDbContext.SaveChanges();
             return itemTransactionCreate.Entity;
         }
 
-        public async Task<IEnumerable<ItemTransaction>> GetAllItemTransactions()
+        public IEnumerable<ItemTransaction> GetAllItemTransactions()
         {
-            var ItemTransactions = await appDbContext.ItemTransactions.ToListAsync();
+            var ItemTransactions = appDbContext.ItemTransactions;
             return ItemTransactions;
         }
 
-        public async Task<ItemTransaction> GetItemTransactionId(int id)
+        public ItemTransaction GetItemTransactionId(int id)
         {
-            var itemTransaction = await appDbContext.ItemTransactions.FirstOrDefaultAsync(x => x.Id == id);
+            var itemTransaction = appDbContext.ItemTransactions.FirstOrDefault(x => x.Id == id);
             return itemTransaction;
         }
 
-        public async Task<Boolean> UpdateItemTransaction(ItemTransaction itemTransaction)
+        public Boolean UpdateItemTransaction(ItemTransaction itemTransaction)
         {
             var updated = false;
 
-            var itemTransactionFound = await appDbContext.ItemTransactions.FirstOrDefaultAsync(x => x.Id == itemTransaction.Id);
+            var itemTransactionFound = appDbContext.ItemTransactions.FirstOrDefault(x => x.Id == itemTransaction.Id);
             if (itemTransactionFound != null)
             {
                 itemTransactionFound.TransactionDate = itemTransaction.TransactionDate;
@@ -53,22 +53,22 @@ namespace FalconInventorySystem.App.Persistence.Repositories
                 itemTransactionFound.ModificationDate = DateTime.Now;
 
                 appDbContext.ItemTransactions.Update(itemTransactionFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeleteItemTransaction(int id)
+        public Boolean DeleteItemTransaction(int id)
         {
             var deleted = false;
 
-            var itemTransactionsFound = await appDbContext.ItemTransactions.FirstOrDefaultAsync(x => x.Id == id);
+            var itemTransactionsFound = appDbContext.ItemTransactions.FirstOrDefault(x => x.Id == id);
             if (itemTransactionsFound != null)
             {
                 appDbContext.ItemTransactions.Remove(itemTransactionsFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

@@ -18,30 +18,30 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<BillOrder> CreateBillOrder(BillOrder billOrder)
+        public BillOrder CreateBillOrder(BillOrder billOrder)
         {
             var billOrderCreate = appDbContext.BillOrders.Add(billOrder);
-            await appDbContext.SaveChangesAsync();
+            appDbContext.SaveChanges();
             return billOrderCreate.Entity;
         }
 
-        public async Task<IEnumerable<BillOrder>> GetAllBillOrders()
+        public IEnumerable<BillOrder> GetAllBillOrders()
         {
-            var billOrders = await appDbContext.BillOrders.ToListAsync();
+            var billOrders = appDbContext.BillOrders;
             return billOrders;
         }
 
-        public async Task<BillOrder> GetBillOrderId(int id)
+        public BillOrder GetBillOrderId(int id)
         {
-            var billOrder = await appDbContext.BillOrders.FirstOrDefaultAsync(x => x.Id == id);
+            var billOrder = appDbContext.BillOrders.FirstOrDefault(x => x.Id == id);
             return billOrder;
         }
 
-        public async Task<Boolean> UpdateBillOrder(BillOrder billOrder)
+        public Boolean UpdateBillOrder(BillOrder billOrder)
         {
             var updated = false;
 
-            var billOrderFound = await appDbContext.BillOrders.FirstOrDefaultAsync(x => x.Id == billOrder.Id);
+            var billOrderFound = appDbContext.BillOrders.FirstOrDefault(x => x.Id == billOrder.Id);
             if (billOrderFound != null)
             {
                 billOrderFound.OrderCreationDate = billOrder.OrderCreationDate;
@@ -50,30 +50,30 @@ namespace FalconInventorySystem.App.Persistence.Repositories
                 billOrderFound.ModificationDate = DateTime.Now;
 
                 appDbContext.BillOrders.Update(billOrderFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeleteBillOrder(int id)
+        public Boolean DeleteBillOrder(int id)
         {
             var deleted = false;
 
-            var billOrderFound = await appDbContext.BillOrders.FirstOrDefaultAsync(x => x.Id == id);
+            var billOrderFound = appDbContext.BillOrders.FirstOrDefault(x => x.Id == id);
             if (billOrderFound != null)
             {
-                var billOrderItemsFound = await appDbContext.BillOrderItems.Where(x => x.BillOrderId == id).ToListAsync();
+                var billOrderItemsFound = appDbContext.BillOrderItems.Where(x => x.BillOrderId == id).ToList();
 
-                billOrderItemsFound.ForEach(async z =>
+                billOrderItemsFound.ForEach(z =>
                 {
                     appDbContext.BillOrderItems.Remove(z);
-                    await appDbContext.SaveChangesAsync();
+                    appDbContext.SaveChanges();
                 });
 
                 appDbContext.BillOrders.Remove(billOrderFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

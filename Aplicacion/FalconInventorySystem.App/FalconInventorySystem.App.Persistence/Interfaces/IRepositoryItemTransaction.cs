@@ -9,10 +9,10 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
 {
     public interface IRepositoryItemTransaction
     {
-        Task<ItemTransaction> CreateItemTransaction(ItemTransaction itemTransaction);
-        Task<IEnumerable<ItemTransaction>> GetAllItemTransactions();
-        Task<ItemTransaction> GetItemTransactionId(int id);
-        Task<Boolean> UpdateItemTransaction(ItemTransaction itemTransaction);
-        Task<Boolean> DeleteItemTransaction(int id);
+        ItemTransaction CreateItemTransaction(ItemTransaction itemTransaction);
+        IEnumerable<ItemTransaction> GetAllItemTransactions();
+        ItemTransaction GetItemTransactionId(int id);
+        Boolean UpdateItemTransaction(ItemTransaction itemTransaction);
+        Boolean DeleteItemTransaction(int id);
     }
 }

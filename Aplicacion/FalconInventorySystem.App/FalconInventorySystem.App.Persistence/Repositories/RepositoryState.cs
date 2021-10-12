@@ -18,52 +18,52 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             this.appDbContext = appDbContext;
         }
 
-        public async Task<State> CreateState(State state)
+        public State CreateState(State state)
         {
             var stateCreate = appDbContext.States.Add(state);
-            await appDbContext.SaveChangesAsync();
+            appDbContext.SaveChanges();
             return stateCreate.Entity;
         }
 
-        public async Task<IEnumerable<State>> GetAllStates()
+        public IEnumerable<State> GetAllStates()
         {
-            var states = await appDbContext.States.ToListAsync();
+            var states = appDbContext.States;
             return states;
         }
 
-        public async Task<State> GetStateById(int id)
+        public State GetStateById(int id)
         {
-            var stateFound = await appDbContext.States.FirstOrDefaultAsync(x => x.Id == id);
+            var stateFound = appDbContext.States.FirstOrDefault(x => x.Id == id);
             return stateFound;
         }
 
-        public async Task<Boolean> UpdateState(State state)
+        public Boolean UpdateState(State state)
         {
             var updated = false;
 
-            var stateFound = await appDbContext.States.FirstOrDefaultAsync(x => x.Id == state.Id);
+            var stateFound = appDbContext.States.FirstOrDefault(x => x.Id == state.Id);
             if (stateFound != null)
             {
                 stateFound.StateName = state.StateName;
                 stateFound.ModificationDate = DateTime.Now;
 
                 appDbContext.States.Update(stateFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 updated = true;
             }
 
             return updated;
         }
 
-        public async Task<Boolean> DeleteState(int id)
+        public Boolean DeleteState(int id)
         {
             var deleted = false;
 
-            var stateFound = await appDbContext.States.FirstOrDefaultAsync(x => x.Id == id);
+            var stateFound = appDbContext.States.FirstOrDefault(x => x.Id == id);
             if (stateFound != null)
             {
                 appDbContext.States.Remove(stateFound);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.SaveChanges();
                 deleted = true;
             }
 

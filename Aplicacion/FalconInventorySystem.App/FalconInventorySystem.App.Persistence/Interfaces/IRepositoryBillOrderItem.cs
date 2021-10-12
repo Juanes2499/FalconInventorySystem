@@ -8,10 +8,10 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
 {
     public interface IRepositoryBillOrderItem
     {
-        Task<BillOrderItem> CreateBillOrderItem(BillOrderItem billOrderItem);
-        Task<IEnumerable<BillOrderItem>> GetAllBillOrderItems();
-        Task<BillOrderItem> GetBillOrderItemId(int id);
-        Task<Boolean> UpdateBillOrderItem(BillOrderItem billOrderItem);
-        Task<Boolean> DeleteBillOrderItem(int id);
+        BillOrderItem CreateBillOrderItem(BillOrderItem billOrderItem);
+        IEnumerable<BillOrderItem> GetAllBillOrderItems();
+        BillOrderItem GetBillOrderItemId(int id);
+        Boolean UpdateBillOrderItem(BillOrderItem billOrderItem);
+        Boolean DeleteBillOrderItem(int id);
     }
 }
