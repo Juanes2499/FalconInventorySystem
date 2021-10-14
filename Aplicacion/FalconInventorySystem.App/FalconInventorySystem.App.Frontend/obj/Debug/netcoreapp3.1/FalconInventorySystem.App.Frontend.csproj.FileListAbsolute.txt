@@ -266,6 +266,7 @@ F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\F
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\ProveedoresEdit.cshtml.g.cs
 C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Brand.cshtml.g.cs
 C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\BrandEdit.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -362,3 +363,9 @@ C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySys
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\FalconInventorySystem.App.Frontend.genruntimeconfig.cache
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\BodegaDelete.cshtml.g.cs
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\BodegaEdit.cshtml.g.cs
+=======
+C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\BrandDelete.cshtml.g.cs
+C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Category.cshtml.g.cs
+C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\CategoryDelete.cshtml.g.cs
+C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\CategoryEdit.cshtml.g.cs
+>>>>>>> 01ecb1f57162214bd88390512f3b686994e8176c

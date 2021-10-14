@@ -33,6 +33,7 @@ namespace FalconInventorySystem.App.Frontend
             services.AddScoped<IRepositoryProduct, RepositoryProduct>();
             services.AddScoped<IRepositoryBrand, RepositoryBrand>();
             services.AddScoped<IRepositoryWarehouse, RepositoryWarehouse>();
+            services.AddScoped<IRepositoryCategory, RepositoryCategory>();
 
             services.AddRazorPages();
         }
