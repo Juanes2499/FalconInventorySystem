@@ -264,3 +264,5 @@ F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\F
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\bin\Debug\netcoreapp3.1\FalconInventorySystem.App.Persistence.pdb
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\ProveedoresDelete.cshtml.g.cs
 F:\Daniel\curso_mintic\falcon\proyecto_falcon\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\ProveedoresEdit.cshtml.g.cs
+C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Brand.cshtml.g.cs
+C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\BrandEdit.cshtml.g.cs
