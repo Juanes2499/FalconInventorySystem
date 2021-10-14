@@ -1,0 +1,21 @@
+﻿@page
+@model FalnconInventorySystem.App.Frontend.Pages.BodegaDeleteModel
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Proveedor</h5>
+    </div>
+    <div class="modal-body-edit">
+        <form method="post">
+            <input type="hidden" asp-for="WareHouse.Id" />
+            <div class="form-confirm">
+                <label for="confirmacion">¿Esta seguro que desea eliminar la bodega?</label>
+            </div>
+           
+            <div class="modal-footer">
+                <a href="Proveedor"><button type="button" class="btn btn-secondary" >Cancelar</button></a>
+                <button type="submit" class="btn btn-primary">Si, estoy seguro</button>
+            </div>
+        </form>
+    </div>
+</div>
