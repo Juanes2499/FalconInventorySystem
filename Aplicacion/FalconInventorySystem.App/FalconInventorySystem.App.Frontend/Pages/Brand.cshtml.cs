@@ -38,7 +38,7 @@ namespace FalnconInventorySystem.App.Frontend.Pages
         public IActionResult OnPost()
         {
             var newBrand = Brand;
-            var supplierCreated = repositoryBrand.CreateBrand(newBrand);
+            var brandCreated = repositoryBrand.CreateBrand(newBrand);
             Brand = null;
             BrandList = new List<Brand>();
             BrandList.AddRange(GetBrands());
