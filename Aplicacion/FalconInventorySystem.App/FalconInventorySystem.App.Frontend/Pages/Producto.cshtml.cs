@@ -11,9 +11,10 @@ namespace FalconInventorySystem.App.Frontend.Pages
 {
     public class ProductoModel : PageModel
     {
-       private readonly IRepositoryProduct repositoryProduct;
+        
+        private readonly IRepositoryProduct repositoryProduct;
 
-       [BindProperty]
+        [BindProperty]
         public Product Product { get; set; }
         public List<Product> ProductsList { get; set; }
 
@@ -21,29 +22,27 @@ namespace FalconInventorySystem.App.Frontend.Pages
         {
             this.repositoryProduct = repositoryProduct;
         }
-/*
-        public IEnumerable<Product> GetProducts()
+
+        public IEnumerable<Product> GetProdicts()
         {
             var productList = repositoryProduct.GetAllProducts();
             return productList;
         }
-        
+
         public void OnGet()
         {
             ProductsList = new List<Product>();
-            ProductsList.AddRange(GetProducts());  
+            ProductsList.AddRange(GetProdicts());  
         }
 
         public IActionResult OnPost()
         {
             var newProduct = Product;
-            var productCreated = repositoryProduct.CreateProduct(newProduct);
+            var ProductCreated = repositoryProduct.CreateProduct(newProduct);
             Product = null;
             ProductsList = new List<Product>();
-            ProductsList.AddRange(GetProducts());
-            return RedirectToPage("Producto");
+            ProductsList.AddRange(GetProdicts());
+            return RedirectToPage("Proveedor");
         }
-*/
-
     }
 }

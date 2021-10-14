@@ -1,3 +1,4 @@
+using System.Net.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace FalconInventorySystem.App.Frontend
             //Services persistence
             services.AddScoped<AppDbContext>();
             services.AddScoped<IRepositorySupplier, RepositorySupplier>();
+            services.AddScoped<IRepositoryProduct, RepositoryProduct>();
 
             services.AddRazorPages();
         }

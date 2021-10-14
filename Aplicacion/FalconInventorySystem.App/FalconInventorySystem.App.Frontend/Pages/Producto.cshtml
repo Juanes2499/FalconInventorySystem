@@ -2,7 +2,6 @@
 @model ProductoModel
 
 
-
 <div class="container my-5">
 
     <div class="d-flex justify-content-between">
@@ -23,7 +22,7 @@
     </div>
 
     </br>
-
+   
     <div>
         <table class="table table-responsive-xl">
             <thead class="header-tabla">
@@ -37,6 +36,7 @@
                     <th class="header-tabla-titulo">Acciones</th>
                 </tr>
             </thead>
+         
             <tbody class="table-body">
                 @foreach (var product in Model.ProductsList)
                 {
@@ -62,7 +62,7 @@
 </div>
 
 <!-- Modal -->
-<!--
+
 <div class="modal fade" id="Crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -75,7 +75,7 @@
             </div>
             <div class="modal-body">
                 <form method="post">
-                    <input type="hidden" asp-for="Supplier.Id" />
+                    <input type="hidden" asp-for="Product.Id" />
                     <div class="form-group">
                         <label for="nombre-producto">Nombre producto</label>
                         <input type="text" class="form-control" asp-for="Product.ProductName"
@@ -83,7 +83,7 @@
                     </div>
                     <div class="form-group">
                         <label for="descripcion">Descripcion</label>
-                        <input type="text" class="form-control" asp-for="product.Description" 
+                        <input type="text" class="form-control" asp-for="Product.Description" 
                             placeholder="Ingrese informacion adicional">
                     </div>
                     <div class="form-group">
@@ -103,9 +103,9 @@
         </div>
     </div>
 </div>
--->
+
 <!-- eliminar -->
-<!--
+
 <div class="modal fade" id="eliminar-proveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -130,4 +130,3 @@
         </div>
     </div>
 </div>
--->
