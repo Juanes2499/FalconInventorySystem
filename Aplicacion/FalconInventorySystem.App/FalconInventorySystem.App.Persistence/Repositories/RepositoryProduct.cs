@@ -27,7 +27,7 @@ namespace FalconInventorySystem.App.Persistence.Repositories
 
         public IEnumerable<Product> GetAllProducts()
         {
-            var products = appDbContext.Products;
+            var products = appDbContext.Products.Include(x => x.Brand).Include(x => x.Category).ToList();
             return products;
         }
 

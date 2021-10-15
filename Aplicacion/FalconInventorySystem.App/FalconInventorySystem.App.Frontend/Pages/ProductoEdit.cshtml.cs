@@ -9,23 +9,23 @@ using FalconInventorySystem.App.Persistence.Interfaces;
 
 namespace FalconInventorySystem.App.Frontend.Pages
 {
-    public class ProductoModel : PageModel
+    public class ProductoEditModel : PageModel
     {
-        
+
         private readonly IRepositoryProduct repositoryProduct;
         private readonly IRepositoryBrand repositoryBrand;
         private readonly IRepositoryCategory repositoryCategory;
 
         [BindProperty]
         public Product Product { get; set; }
-        public Brand Brand  { get; set; }
+        public Brand Brand { get; set; }
         public Category Category { get; set; }
 
         public List<Product> ProductsList { get; set; }
         public List<Brand> BrandsList { get; set; }
         public List<Category> CategoriesList { get; set; }
 
-        public ProductoModel (
+        public ProductoEditModel(
                 IRepositoryProduct repositoryProduct,
                 IRepositoryBrand repositoryBrand,
                 IRepositoryCategory repositoryCategory
@@ -54,26 +54,23 @@ namespace FalconInventorySystem.App.Frontend.Pages
             return categoriesList;
         }
 
-        public void OnGet()
+        public IActionResult OnGet(int productId)
         {
-            ProductsList = new List<Product>();
-            ProductsList.AddRange(GetProducts());
-
             BrandsList = new List<Brand>();
             BrandsList.AddRange(GetBrands());
 
             CategoriesList = new List<Category>();
             CategoriesList.AddRange(GetCategories());
+
+            Product = repositoryProduct.GetProductById(productId);
+            return Page();
         }
 
         public IActionResult OnPost()
         {
-            var newProduct = Product;
-            var ProductCreated = repositoryProduct.CreateProduct(newProduct);
-            Product = null;
-            ProductsList = new List<Product>();
-            ProductsList.AddRange(GetProducts());
-            return RedirectToPage("Producto");
+            repositoryProduct.UpdateProduct(Product);
+            return RedirectToPage("./Producto");
         }
+
     }
 }

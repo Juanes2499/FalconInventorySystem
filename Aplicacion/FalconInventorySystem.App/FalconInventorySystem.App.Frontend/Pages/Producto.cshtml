@@ -43,13 +43,13 @@
                     <tr>
                         <td>@product.ProductName</td>
                         <td>@product.Description</td>
-                        <td>@product.BrandId</td>
-                        <td>@product.CategoryId</td>
+                        <td>@product.Brand.BrandName</td>
+                        <td>@product.Category.CategoryName</td>
                         <td>@product.CreationDate</td>
                         <td>@product.ModificationDate</td>
 
                         <td class="text-center">
-                            <a asp-page="/ProveedoresEdit" asp-route-supplierId="@product.Id"><i
+                            <a asp-page="/ProductoEdit" asp-route-productId="@product.Id"><i
                                 class="far fa-edit fa-2x"></i></a>
                             <a asp-page="/ProveedoresDelete" asp-route-supplierId="@product.Id"><i
                                 class="fas fa-trash-alt fa-2x"></i></a>
@@ -88,15 +88,27 @@
                     </div>
                     <div class="form-group">
                         <label for="marca">Marca</label>
-                        <input type="text" class="form-control" asp-for="Product.BrandId" placeholder="Marca">
+                        <select class="form-control" asp-for="Product.BrandId">
+                            <option value="">Seleccionar una marca</option>
+                             @foreach (var brand in Model.BrandsList)
+                             {
+                                <option value=@brand.Id>@brand.BrandName</option>
+                             }
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="categoria">Categoria</label>
-                        <input type="tel" class="form-control" asp-for="Product.CategoryId" placeholder="Categoria">
+                        <select class="form-control" asp-for="Product.CategoryId">
+                            <option value="">Seleccionar una categoría</option>
+                            @foreach (var categoria in Model.CategoriesList)
+                            {
+                                <option value=@categoria.Id>@categoria.CategoryName</option>
+                            }
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Crear proveedor</button>
+                        <button type="submit" class="btn btn-primary">Crear Producto</button>
                     </div>
                 </form>
             </div>
