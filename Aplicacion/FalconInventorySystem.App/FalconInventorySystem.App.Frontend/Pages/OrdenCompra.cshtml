@@ -45,7 +45,7 @@
                     <tr>
                         <td>@purchaseOrder.NumberOrder</td>
                         <td>@purchaseOrder.OrderCreationDate</td>
-                        <td>@purchaseOrder.SupplierId</td>
+                        <td>@purchaseOrder.Supplier.SupplierName</td>
                         <td>@purchaseOrder.Observation</td>
                         <td>@purchaseOrder.Tax</td> 
                         <td>@purchaseOrder.CreationDate</td>
@@ -83,14 +83,16 @@
                         <input type="num" class="form-control" asp-for="PurchaseOrder.NumberOrder"
                             placeholder="Numero Orden">
                     </div>
-                    <label for="proveedor">Proveedor</label>
-                    <select class="form-control" asp-for="PurchaseOrder.SupplierId">
-                        <option value="">Seleccionar un Proveedor</option>
-                            @foreach (var supplier in Model.PurchaseOrderList)
-                            {
-                            <option value=@supplier.Id>@supplier.SupplierId</option>
-                            }
-                    </select>
+                    <div class="form-group">
+                        <label for="proveedor">Proveedor</label>
+                        <select class="form-control" asp-for="PurchaseOrder.SupplierId">
+                            <option value="">Seleccionar un Proveedor</option>
+                                @foreach (var supplier in Model.SupplierList)
+                                {
+                                <option value=@supplier.Id>@supplier.SupplierName</option>
+                                }
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="marca">Observacion</label>
                         <input type="text" class="form-control" asp-for="PurchaseOrder.Observation" placeholder="Observacion">
