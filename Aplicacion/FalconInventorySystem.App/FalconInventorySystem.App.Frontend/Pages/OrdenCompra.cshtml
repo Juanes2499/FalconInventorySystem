@@ -1,139 +1,137 @@
 @page
-@model ProductoModel
+@model OrdenCompraModel
 
 
+<div class="container my-5">
+    <div class="d-flex justify-content-between">
+        <a class="back-dashboard" href="Dashboard">
+            <img src="https://img.icons8.com/ios-filled/50/000000/back.png" />
+            Orden de Compra
+        </a>
+        <div class="button-search row">
 
+            <div class="input-append">
+                <input type="text" class="input-medium search-query" name="s" placeholder="Search" value="">
+            </div>
 
-
-<div class="container-search">
-    <a class="back" href="Dashboard">
-        <img class="img_back" src="https://img.icons8.com/ios-filled/50/000000/back.png" />Orden de compra
-    </a>
-    
-        <div class="demo">
-            <form class="form-search">
-                <div class="input-group">
-                    <input class="form-control form-text" maxlength="80" placeholder="Buscar" size="15" type="text" />
-
-                </div>
-            </form>
-        </div>
-        <div class="button-search">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Crear">
                 Crear Orden de Compra
             </button>
         </div>
-    
+    </div>
 </div>
 
 
-<table class="table table-responsive table-bordered ">
-    <thead class="text-center">
-        <tr class="titulo">
-            
-            <th>Nombre Producto</th>
-            <th>Valor</th>
-            <th>Fecha vencimiento</th>
-            <th>Marca</th>
-            <th>Categoria</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody class="text-center">
-        <tr>
-            <td>123141351</td>
-            <td>Daniel</td>
-            <td>Cr.32 No 32-45</td>
-            <td>3135759143</td>
-            <td>verdde3991@gmail.com</td>
-            
-            <td class="text-center">
-                <a class="edit"data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-edit fa-2x"></i></a> <i class="fas fa-trash-alt fa-2x"></i>
-            </td>
-        </tr>
-        <tr>
-            <td>123141351</td>
-            <td>Daniel</td>
-            <td>Cr.32 No 32-45</td>
-            <td>3135759143</td>
-            <td>verdde3991@gmail.com</td>
-            
-            <td class="text-center">
-                <i class="far fa-edit fa-2x"></i> <i class="fas fa-trash-alt fa-2x"></i>
-            </td>
-        </tr>
-        <tr>
-           <td>123141351</td>
-            <td>Daniel</td>
-            <td>Cr.32 No 32-45</td>
-            <td>3135759143</td>
-            <td>verdde3991@gmail.com</td>
-            
-            <td class="text-center">
-                <i class="far fa-edit fa-2x"></i> <i class="fas fa-trash-alt fa-2x"></i>
-            </td>
-        </tr>
-    </tbody>
-</table>
+   </br>
+   
+    <div>
+        <table class="table table-responsive-xl">
+            <thead class="header-tabla">
+                <tr>
+                    <th class="header-tabla-titulo">Número de orden</th>  
+                     <th class="header-tabla-titulo">Fecha Creación Orden</th> 
+                    <th class="header-tabla-titulo">Proveedor</th>
+                    <th class="header-tabla-titulo">Observación</th>
+                    <th class="header-tabla-titulo">Impuesto</th>
+                     <th class="header-tabla-titulo">Fecha Creacion</th>
+                    <th class="header-tabla-titulo">Fecha Actualizacion</th>
+                    <th class="header-tabla-titulo">Acciones</th>
+                </tr>
+            </thead>
+         
+            <tbody class="table-body">
+                @foreach (var purchaseOrder in Model.PurchaseOrderList)
+                {
+                    <tr>
+                        <td>@purchaseOrder.NumberOrder</td>
+                        <td>@purchaseOrder.OrderCreationDate</td>
+                        <td>@purchaseOrder.SupplierId</td>
+                        <td>@purchaseOrder.Observation</td>
+                        <td>@purchaseOrder.Tax</td> 
+                        <td>@purchaseOrder.CreationDate</td>
+                        <td>@purchaseOrder.ModificationDate</td>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                        <td class="text-center">
+                            <a asp-page="/OrdenCompraEdit" asp-route-purchaseOrderId="@purchaseOrder.Id"><i
+                                class="far fa-edit fa-2x"></i></a>
+                            <a asp-page="/BodegaDelete" asp-route-purchaseOrderId="@purchaseOrder.Id"><i
+                                class="fas fa-trash-alt fa-2x"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+
+<div class="modal fade" id="Crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Crear Proveedor</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Crear Orden de Compra</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <input type="hidden" asp-for="PurchaseOrder.Id" />
+                    <div class="form-group">
+                        <label for="nombre-producto">Número Orden de Compra</label>
+                        <input type="num" class="form-control" asp-for="PurchaseOrder.NumberOrder"
+                            placeholder="Numero Orden">
+                    </div>
+                    <label for="proveedor">Proveedor</label>
+                    <select class="form-control" asp-for="PurchaseOrder.SupplierId">
+                        <option value="">Seleccionar un Proveedor</option>
+                            @foreach (var supplier in Model.PurchaseOrderList)
+                            {
+                            <option value=@supplier.Id>@supplier.SupplierId</option>
+                            }
+                    </select>
+                    <div class="form-group">
+                        <label for="marca">Observacion</label>
+                        <input type="text" class="form-control" asp-for="PurchaseOrder.Observation" placeholder="Observacion">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="categoria">Impuesto</label>
+                        <input type="num" class="form-control" asp-for="PurchaseOrder.Tax" placeholder="Impuesto">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Crear proveedor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- eliminar -->
+
+<div class="modal fade" id="eliminar-proveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Proveedor</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="form-group">
-                        <label for="Nombre_Producto">Nombre Productor</label>
-                        <input type="text" class="form-control" id="nombre_producto" placeholder="Nombre Productor">
-                    </div>
-                    <div class="form-group">
-                        <label for="Valor">Valor</label>
-                        <input type="text" class="form-control" id="valor" placeholder="Valor">
-                    </div>
-                    <div class="form-group">
-                        <label for="Fecha_vencimiento">Fecha vencimiento</label>
-                        <input type="text" class="form-control" id="fecha_ven" placeholder="Direccion">
-                    </div>
-                    <div class="form-group">
-                        <label for="Marca">Marca</label>
-                        <input type="tex" class="form-control" id="marca" placeholder="Marca">
-                    </div>
-                    <div class="form-group">
-                        <label for="categoria">Categoria</label>
-                        <input type="text" class="form-control" id="categoria" placeholder="categoria">
+                    <div class="mensage-eliminar">
+                        <p>¿Esta seguro que desea <span>borrar</span> el registro?</p>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Crear proveedor</button>
+                <button type="button" class="btn btn-primary">Eliminar proveedor</button>
             </div>
         </div>
     </div>

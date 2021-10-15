@@ -369,3 +369,10 @@ C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInv
 C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\CategoryDelete.cshtml.g.cs
 C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\CategoryEdit.cshtml.g.cs
 >>>>>>> 01ecb1f57162214bd88390512f3b686994e8176c
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\CategoryDelete.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\CategoryEdit.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenCompraDelete.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenCompraEdit.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenVenta.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenVentaDelete.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenVentaEdit.cshtml.g.cs
