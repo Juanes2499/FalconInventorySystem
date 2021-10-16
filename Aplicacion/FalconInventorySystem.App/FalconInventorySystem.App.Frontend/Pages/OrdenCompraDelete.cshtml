@@ -9,11 +9,11 @@
         <form method="post">
             <input type="hidden" asp-for="PurchaseOrder.Id" />
             <div class="form-confirm">
-                <label for="confirmacion">¿Esta seguro que desea eliminar la orden de compra??</label>
+                <label for="confirmacion">¿Esta seguro que desea eliminar la orden de compra con ID @Model.PurchaseOrder.Id?</label>
             </div>
            
             <div class="modal-footer">
-                <a href="Proveedor"><button type="button" class="btn btn-secondary" >Cancelar</button></a>
+                <a asp-page="/OrdenCompra" class="btn btn-secondary">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Si, estoy seguro</button>
             </div>
         </form>

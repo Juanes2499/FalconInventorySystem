@@ -8,6 +8,7 @@
     <div class="modal-body-edit">
         <form method="post">
             <input type="hidden" asp-for="PurchaseOrderItem.Id" />
+            <input type="hidden" asp-for="PurchaseOrderItem.PurchaseOrderId" />
             <div class="form-group">
                 <label for="razon_social">Producto</label>
                 <select class="form-control" asp-for="PurchaseOrderItem.ProductId">
@@ -41,8 +42,8 @@
                 </select>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary" asp-page-handler="OrdenCompraItem">Añadir Item</button>
+                <a asp-page="/OrdenCompraDetails" asp-route-PurchaseOrderId="@Model.PurchaseOrderItem.PurchaseOrderId" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary" asp-page-handler="OrdenCompraItem">Actualizar Item</button>
             </div>
         </form>
     </div>
