@@ -1,0 +1,30 @@
+﻿@page
+@model FalnconInventorySystem.App.Frontend.Pages.BillOrderEditModel
+
+<div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Crear Orden de Venta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <input type="hidden" asp-for="BillOrder.Id" />
+                    <div class="form-group">
+                        <label for="nombre-producto">Cliente</label>
+                        <input type="num" class="form-control" asp-for="BillOrder.Client"
+                            placeholder="Cliente">
+                    </div>
+                    <div class="form-group">
+                        <label for="marca">Observacion</label>
+                        <input type="text" class="form-control" asp-for="BillOrder.Observation" placeholder="Observacion">
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Actualizar Orden de Venta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
