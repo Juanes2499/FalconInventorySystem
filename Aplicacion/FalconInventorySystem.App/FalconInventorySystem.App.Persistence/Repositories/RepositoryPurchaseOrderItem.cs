@@ -37,6 +37,15 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             return purchaseOrderItem;
         }
 
+        public IEnumerable<PurchaseOrderItem> GetPurchaseOrderItemByPurchaseOrderId(int id)
+        {
+            var purchaseOrderItem = appDbContext.PurchaseOrderItems
+                .Where(x => x.PurchaseOrderId == id)
+                .Include(x => x.Product)
+                .Include(x => x.State);
+            return purchaseOrderItem;
+        }
+
         public Boolean UpdatePurchaseOrderItem(PurchaseOrderItem purchaseOrderItem)
         {
             var updated = false;

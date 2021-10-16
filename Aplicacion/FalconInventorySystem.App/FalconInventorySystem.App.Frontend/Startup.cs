@@ -34,6 +34,14 @@ namespace FalconInventorySystem.App.Frontend
             services.AddScoped<IRepositoryBrand, RepositoryBrand>();
             services.AddScoped<IRepositoryWarehouse, RepositoryWarehouse>();
             services.AddScoped<IRepositoryCategory, RepositoryCategory>();
+            services.AddScoped<IRepositoryPurchaseOrder, RepositoryPurchaseOrder>();
+            services.AddScoped<IRepositoryPurchaseOrderItem, RepositoryPurchaseOrderItem>();
+            services.AddScoped<IRepositoryState, RepositoryState>();
+
+            //Variable sesión
+            services.AddSession();
+            services.AddMemoryCache();
+            services.AddMvc();
 
             services.AddRazorPages();
         }
@@ -51,6 +59,8 @@ namespace FalconInventorySystem.App.Frontend
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSession();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

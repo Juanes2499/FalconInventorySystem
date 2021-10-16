@@ -20,20 +20,20 @@ namespace FalconInventorySystem.App.Persistence.Repositories
 
         public State CreateState(State state)
         {
-            var stateCreate = appDbContext.States.Add(state);
+            var stateCreate = appDbContext.TransactionStates.Add(state);
             appDbContext.SaveChanges();
             return stateCreate.Entity;
         }
 
         public IEnumerable<State> GetAllStates()
         {
-            var states = appDbContext.States;
-            return states;
+            var statesListed = appDbContext.TransactionStates.ToList();
+            return statesListed;
         }
 
         public State GetStateById(int id)
         {
-            var stateFound = appDbContext.States.FirstOrDefault(x => x.Id == id);
+            var stateFound = appDbContext.TransactionStates.FirstOrDefault(x => x.Id == id);
             return stateFound;
         }
 
@@ -41,13 +41,13 @@ namespace FalconInventorySystem.App.Persistence.Repositories
         {
             var updated = false;
 
-            var stateFound = appDbContext.States.FirstOrDefault(x => x.Id == state.Id);
+            var stateFound = appDbContext.TransactionStates.FirstOrDefault(x => x.Id == state.Id);
             if (stateFound != null)
             {
                 stateFound.StateName = state.StateName;
                 stateFound.ModificationDate = DateTime.Now;
 
-                appDbContext.States.Update(stateFound);
+                appDbContext.TransactionStates.Update(stateFound);
                 appDbContext.SaveChanges();
                 updated = true;
             }
@@ -59,10 +59,10 @@ namespace FalconInventorySystem.App.Persistence.Repositories
         {
             var deleted = false;
 
-            var stateFound = appDbContext.States.FirstOrDefault(x => x.Id == id);
+            var stateFound = appDbContext.TransactionStates.FirstOrDefault(x => x.Id == id);
             if (stateFound != null)
             {
-                appDbContext.States.Remove(stateFound);
+                appDbContext.TransactionStates.Remove(stateFound);
                 appDbContext.SaveChanges();
                 deleted = true;
             }

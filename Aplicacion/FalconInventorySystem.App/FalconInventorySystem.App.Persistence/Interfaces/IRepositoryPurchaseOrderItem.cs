@@ -11,6 +11,7 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
         PurchaseOrderItem CreatePurchaseOrderItem(PurchaseOrderItem purchaseOrderItem);
         IEnumerable<PurchaseOrderItem> GetAllPurchaseOrderItems();
         PurchaseOrderItem GetPurchaseOrderItemById(int id);
+        IEnumerable<PurchaseOrderItem> GetPurchaseOrderItemByPurchaseOrderId(int id);
         Boolean UpdatePurchaseOrderItem(PurchaseOrderItem purchaseOrderItem);
         Boolean DeletePurchaseOrderItem(int id);
     }

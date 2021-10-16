@@ -14,7 +14,7 @@ namespace FalconInventorySystem.App.Persistence
  
         public DbSet<Product> Products { get; set; }
 
-        public DbSet<State> States { get; set; }
+        public DbSet<State> TransactionStates { get; set; }
 
         public DbSet<Warehouse> Warehouses { get; set; }
 
