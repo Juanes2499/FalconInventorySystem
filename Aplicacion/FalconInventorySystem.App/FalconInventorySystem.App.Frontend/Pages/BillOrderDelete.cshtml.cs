@@ -21,9 +21,9 @@ namespace FalnconInventorySystem.App.Frontend.Pages
             this.repositoryBillOrder = repositoryBillOrder;
         }
 
-        public IActionResult OnGet(int BillOrderId)
+        public IActionResult OnGet(int OrderBillId)
         {
-            BillOrder = repositoryBillOrder.GetBillOrderId(BillOrderId);
+            BillOrder = repositoryBillOrder.GetBillOrderId(OrderBillId);
             return Page();
         }
 

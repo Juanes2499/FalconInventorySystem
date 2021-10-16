@@ -37,6 +37,7 @@ namespace FalconInventorySystem.App.Frontend
             services.AddScoped<IRepositoryPurchaseOrder, RepositoryPurchaseOrder>();
             services.AddScoped<IRepositoryPurchaseOrderItem, RepositoryPurchaseOrderItem>();
             services.AddScoped<IRepositoryState, RepositoryState>();
+            services.AddScoped<IRepositoryBillOrder, RepositoryBillOrder>();
 
             //Variable sesión
             services.AddSession();
