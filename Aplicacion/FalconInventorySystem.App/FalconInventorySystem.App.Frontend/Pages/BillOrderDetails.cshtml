@@ -1,117 +1,118 @@
 ﻿@page
 @model FalnconInventorySystem.App.Frontend.Pages.BillOrdeDetailsModel
 
-<div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Orden de Compra</h5>
-        <a type="button" class="close" data-dismiss="modal" aria-label="Close" asp-page=".\BillOrder">
-            <span aria-hidden="true">&times;</span>
-        </a>
-    </div>
-    <div class="modal-body">
-        <form method="post">
-            <input type="hidden" asp-for="BillOrder.Id" />
-            <div class="form-group">
-                <label for="nombre-producto">Cliente</label>
-                <input type="text" class="form-control" asp-for="BillOrder.Client" placeholder="Cliente">
-            </div>
-            <div class="form-group">
-                <label for="proveedor">Observaciones</label>
-                <input type="text" class="form-control" asp-for="BillOrder.Observation" placeholder="Observaciones">
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" asp-page-handler="BillOrder">Generar Orden de Venta</button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Crear">
-                    Añadir Item
-                </button>
-            </div>
-        </form>
-
-        <div>
-            <table class="table table-responsive-xl">
-                <thead class="header-tabla">
-                    <tr>
-                        <th class="header-tabla-titulo">ID</th>
-                        <th class="header-tabla-titulo">Producto</th>
-                        <th class="header-tabla-titulo">Cantidad</th>
-                        <th class="header-tabla-titulo">Estado</th>
-                        <th class="header-tabla-titulo">Fecha Creacion</th>
-                        <th class="header-tabla-titulo">Fecha Actualizacion</th>
-                        <th class="header-tabla-titulo">Acciones</th>
-                    </tr>
-                </thead>
-
-                <tbody class="table-body">
-                    @foreach (var billOrderItem in Model.BillOrderItemList)
-                    {
-                        <tr>
-                            <td>@billOrderItem.Id</td>
-                            <td>@billOrderItem.Product.ProductName</td>
-                            <td>@billOrderItem.Amount</td>
-                            <td>@billOrderItem.State.StateName</td>
-                            <td>@billOrderItem.CreationDate</td>
-                            <td>@billOrderItem.ModificationDate</td>
-
-                            <td class="text-center">
-                                <a class="btn btn-success" asp-page="/BillOrderItemEdit" asp-route-billOrderItemId="@billOrderItem.Id">
-                                    <i class="far fa-edit fa-2x"></i>
-                                </a>
-                                <a class="btn btn-danger" asp-page="/BillOrderItemDelete" asp-route-billOrderItemId="@billOrderItem.Id">
-                                    <i class="fas fa-trash-alt fa-2x"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+<div class="container-edit">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Orden de Compra</h5>
+            <a type="button" class="close" data-dismiss="modal" aria-label="Close" asp-page=".\BillOrder">
+                <span aria-hidden="true">&times;</span>
+            </a>
         </div>
+        <div class="modal-body">
+            <form method="post">
+                <input type="hidden" asp-for="BillOrder.Id" />
+                <div class="form-group">
+                    <label for="nombre-producto">Cliente</label>
+                    <input type="text" class="form-control" asp-for="BillOrder.Client" placeholder="Cliente">
+                </div>
+                <div class="form-group">
+                    <label for="proveedor">Observaciones</label>
+                    <input type="text" class="form-control" asp-for="BillOrder.Observation" placeholder="Observaciones">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" asp-page-handler="BillOrder">Generar Orden de Venta</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Crear">
+                        Añadir Item
+                    </button>
+                </div>
+            </form>
 
-        <!-- Modal -->
-        <div class="modal fade" id="Crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Añadir Item</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post">
-                            <div class="form-group">
-                                <label for="razon_social">Producto</label>
-                                <select class="form-control" asp-for="BillOrderItem.ProductId">
-                                    <option value="">Seleccionar un producto</option>
-                                    @foreach (var product in Model.ProductList)
-                                    {
-                                        <option value=@product.Id>@product.ProductName</option>
-                                    }
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="razon_social">Cantidad</label>
-                                <input type="text" class="form-control" asp-for="BillOrderItem.Amount" placeholder="Cantidad">
-                            </div>
-                            <div class="form-group">
-                                <label for="razon_social">Observación</label>
-                                <input type="text" class="form-control" asp-for="BillOrderItem.Observation" placeholder="Observación">
-                            </div>
-                            <div class="form-group">
-                                <label for="razon_social">Estado</label>
-                                <select class="form-control" asp-for="BillOrderItem.StateId">
-                                    <option value="">Seleccionar un estado</option>
-                                    @foreach (var state in Model.StateList)
-                                    {
-                                        <option value=@state.Id>@state.StateName</option>
-                                    }
-                                </select>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary" asp-page-handler="BillOrderItem">Añadir Item</button>
-                            </div>
-                        </form>
+            <div>
+                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead class="first-column-table">
+                        <tr style="text-center">
+                            <th class="color-texto">ID</th>
+                            <th class="color-texto">Producto</th>
+                            <th class="color-texto">Cantidad</th>
+                            <th class="color-texto">Estado</th>
+                            <th class="color-texto">Fecha Creacion</th>
+                            <th class="color-texto">Fecha Actualizacion</th>
+                            <th class="color-texto">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-body">
+                        @foreach (var billOrderItem in Model.BillOrderItemList)
+                        {
+                            <tr>
+                                <td>@billOrderItem.Id</td>
+                                <td>@billOrderItem.Product.ProductName</td>
+                                <td>@billOrderItem.Amount</td>
+                                <td>@billOrderItem.State.StateName</td>
+                                <td>@billOrderItem.CreationDate</td>
+                                <td>@billOrderItem.ModificationDate</td>
+
+                                <td class="text-center">
+                                    <a class="btn btn-success" asp-page="/BillOrderItemEdit" asp-route-billOrderItemId="@billOrderItem.Id">
+                                        <i class="far fa-edit fa-1color-texto                         </a>
+                                    <a class="btn btn-danger" asp-page="/BillOrderItemDelete" asp-route-billOrderItemId="@billOrderItem.Id">
+                                        <i class="fas fa-trash-alt fa-1x"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Añadir Item</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="razon_social">Producto</label>
+                                    <select class="form-control" asp-for="BillOrderItem.ProductId">
+                                        <option value="">Seleccionar un producto</option>
+                                        @foreach (var product in Model.ProductList)
+                                        {
+                                            <option value=@product.Id>@product.ProductName</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="razon_social">Cantidad</label>
+                                    <input type="text" class="form-control" asp-for="BillOrderItem.Amount" placeholder="Cantidad">
+                                </div>
+                                <div class="form-group">
+                                    <label for="razon_social">Observación</label>
+                                    <input type="text" class="form-control" asp-for="BillOrderItem.Observation" placeholder="Observación">
+                                </div>
+                                <div class="form-group">
+                                    <label for="razon_social">Estado</label>
+                                    <select class="form-control" asp-for="BillOrderItem.StateId">
+                                        <option value="">Seleccionar un estado</option>
+                                        @foreach (var state in Model.StateList)
+                                        {
+                                            <option value=@state.Id>@state.StateName</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" asp-page-handler="BillOrderItem">Añadir Item</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
