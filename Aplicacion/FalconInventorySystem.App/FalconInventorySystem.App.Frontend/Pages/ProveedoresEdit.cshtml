@@ -1,37 +1,39 @@
 ﻿@page
 @model FalnconInventorySystem.App.Frontend.ProveedoresEditModel
 
-<div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Editar Proveedor</h5>
-    </div>
-    <div class="modal-body-edit">
-        <form method="post">
-            <input type="hidden" asp-for="Supplier.Id" />
-            <div class="form-group">
-                <label for="razon_social">Razón Social</label>
-                <input type="text" class="form-control" asp-for="Supplier.SupplierName" placeholder="Razón Social">
-            </div>
-            <div class="form-group">
-                <label for="nit">NIT</label>
-                <input type="text" class="form-control" asp-for="Supplier.Nit" placeholder="NIT">
-            </div>
-            <div class="form-group">
-                <label for="direccion">Direccion</label>
-                <input type="text" class="form-control" asp-for="Supplier.Address" placeholder="Direccion">
-            </div>
-            <div class="form-group">
-                <label for="phone">Telefono</label>
-                <input type="tel" class="form-control" asp-for="Supplier.Phone" placeholder="Telefono">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="tel" class="form-control" asp-for="Supplier.Email" placeholder="Email">
-            </div>
-            <div class="modal-footer">
-                <a asp-page="/Proveedor"  class="btn btn-secondary">Cancelar</a>
-                <button type="submit" class="btn btn-primary">Actualizar proveedor</button>
-            </div>
-        </form>
+<div class="container-edit">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar Proveedor</h5>
+        </div>
+        <div class="modal-body-edit">
+            <form method="post">
+                <input type="hidden" asp-for="Supplier.Id" />
+                <div class="form-group">
+                    <label for="razon_social">Razón Social</label>
+                    <input type="text" class="form-control" asp-for="Supplier.SupplierName" placeholder="Razón Social">
+                </div>
+                <div class="form-group">
+                    <label for="nit">NIT</label>
+                    <input type="text" class="form-control" asp-for="Supplier.Nit" placeholder="NIT">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" class="form-control" asp-for="Supplier.Address" placeholder="Direccion">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefono</label>
+                    <input type="tel" class="form-control" asp-for="Supplier.Phone" placeholder="Telefono">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="tel" class="form-control" asp-for="Supplier.Email" placeholder="Email">
+                </div>
+                <div class="modal-footer">
+                    <a asp-page="/Proveedor"  class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Actualizar proveedor</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

@@ -3,26 +3,20 @@
 
 
 <div class="container my-5">
-
     <div class="d-flex justify-content-between">
         <a class="back-dashboard" href="Dashboard">
             <img src="https://img.icons8.com/ios-filled/50/000000/back.png" />
             Producto
         </a>
-        <div class="button-search row">
-
-            <div class="input-append">
-                <input type="text" class="input-medium search-query" name="s" placeholder="Search" value="">
-            </div>
-
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Crear">
-                Crear Producto
-            </button>
+        <button type="button" class="btn btn-primary crear" data-toggle="modal" data-target="#Crear">
+            Crear Producto
+        </button>
         </div>
     </div>
+</div>
+    
 
-    </br>
-   
+<!--  
     <div>
         <table class="table table-responsive-xl">
             <thead class="header-tabla">
@@ -60,7 +54,7 @@
         </table>
     </div>
 </div>
-
+-->
 <!-- Modal -->
 
 <div class="modal fade" id="Crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -116,29 +110,40 @@
     </div>
 </div>
 
-<!-- eliminar -->
 
-<div class="modal fade" id="eliminar-proveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Proveedor</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mensage-eliminar">
-                        <p>¿Esta seguro que desea <span>borrar</span> el registro?</p>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Eliminar proveedor</button>
-            </div>
-        </div>
-    </div>
+<!-- Nueva tabla-->
+<div class="container-table">
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead class="first-column-table">
+            <tr style="text-center">
+                <th class="color-texto">Nombre Producto</th>
+                <th class="color-texto">descripcion</th>
+                <th class="color-texto">Marca</th>
+                <th class="color-texto">Categoria</th>
+                <th class="color-texto">Fecha Creacion</th>
+                <th class="color-texto">Fecha Actualizacion</th>
+                <th class="color-texto" style="text-align:center;width:100px;">Acciones</th>
+            </tr>
+        </thead>
+       <tbody class="table-body">
+                @foreach (var product in Model.ProductsList)
+                {
+                    <tr>
+                        <td>@product.ProductName</td>
+                        <td>@product.Description</td>
+                        <td>@product.Brand.BrandName</td>
+                        <td>@product.Category.CategoryName</td>
+                        <td>@product.CreationDate</td>
+                        <td>@product.ModificationDate</td>
+
+                        <td class="text-center">
+                            <a class="btn btn-success" asp-page="/ProductoEdit" asp-route-productId="@product.Id"><i
+                                class="far fa-edit fa-1x"></i></a>
+                            <a class="btn btn-danger" asp-page="/ProductoDelete" asp-route-productId="@product.Id"><i
+                                class="fas fa-trash-alt fa-1x"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+    </table>
 </div>
