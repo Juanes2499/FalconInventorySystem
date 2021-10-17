@@ -13,13 +13,13 @@ namespace FalconInventorySystem.App.Frontend.Pages
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\_ViewImports.cshtml"
+#line 1 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\_ViewImports.cshtml"
 using FalconInventorySystem.App.Frontend;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3c171cd2a1e90419e14f5c36822d813583170cb7", @"/Pages/OrdenCompra.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c72123d4a0f5e137ee228a96e6461794539b3dc0", @"/Pages/OrdenCompra.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c284d041bf7e2a67c4dcd8122a3bcdd82b896f5f", @"/Pages/_ViewImports.cshtml")]
     public class Pages_OrdenCompra : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
@@ -108,6 +108,7 @@ using FalconInventorySystem.App.Frontend;
         <table class=""table table-responsive-xl"">
             <thead class=""header-tabla"">
                 <tr>
+                    <th class=""header-tabla-titulo"">ID</th>
                     <th class=""header-tabla-titulo"">Número de orden</th>
                     <th class=""header-tabla-titulo"">Fecha Creación Orden</th>
                     <th class=""header-tabla-titulo"">Proveedor</th>
@@ -122,65 +123,65 @@ using FalconInventorySystem.App.Frontend;
             <tbody class=""table-body"">
 ");
 #nullable restore
-#line 41 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 42 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
                  foreach (var purchaseOrder in Model.PurchaseOrderList)
                 {
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("                    <tr>\r\n                        <td>");
+            WriteLiteral("                <tr>\r\n                    <td>");
 #nullable restore
-#line 44 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                       Write(purchaseOrder.NumberOrder);
+#line 45 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                   Write(purchaseOrder.Id);
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</td>\r\n                        <td>");
+            WriteLiteral("</td>\r\n                    <td>");
 #nullable restore
-#line 45 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                       Write(purchaseOrder.OrderCreationDate);
+#line 46 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                   Write(purchaseOrder.NumberOrder);
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</td>\r\n                        <td>");
+            WriteLiteral("</td>\r\n                    <td>");
 #nullable restore
-#line 46 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                       Write(purchaseOrder.Supplier.SupplierName);
+#line 47 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                   Write(purchaseOrder.OrderCreationDate);
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</td>\r\n                        <td>");
+            WriteLiteral("</td>\r\n                    <td>");
 #nullable restore
-#line 47 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                       Write(purchaseOrder.Observation);
+#line 48 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                   Write(purchaseOrder.Supplier.SupplierName);
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</td>\r\n                        <td>");
+            WriteLiteral("</td>\r\n                    <td>");
 #nullable restore
-#line 48 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                       Write(purchaseOrder.Tax);
+#line 49 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                   Write(purchaseOrder.Observation);
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</td>\r\n                        <td>");
+            WriteLiteral("</td>\r\n                    <td>");
 #nullable restore
-#line 49 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                       Write(purchaseOrder.CreationDate);
+#line 50 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                   Write(purchaseOrder.Tax);
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</td>\r\n                        <td>");
+            WriteLiteral("</td>\r\n                    <td>");
 #nullable restore
-#line 50 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                       Write(purchaseOrder.ModificationDate);
+#line 51 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                   Write(purchaseOrder.CreationDate);
 
 #line default
 #line hidden
@@ -200,8 +201,8 @@ using FalconInventorySystem.App.Frontend;
             }
             BeginWriteTagHelperAttribute();
 #nullable restore
-#line 53 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
-                                                                             WriteLiteral(purchaseOrder.Id);
+#line 55 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+                                                                         WriteLiteral(purchaseOrder.Id);
 
 #line default
 #line hidden
@@ -247,9 +248,9 @@ using FalconInventorySystem.App.Frontend;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            WriteLiteral("\r\n                        </td>\r\n                    </tr>\r\n");
+            WriteLiteral("\r\n                    </td>\r\n                </tr>\r\n");
 #nullable restore
-#line 61 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 63 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
                 }
 
 #line default
@@ -283,7 +284,7 @@ using FalconInventorySystem.App.Frontend;
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_4.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
 #nullable restore
-#line 80 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 82 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.PurchaseOrder.Id);
 
 #line default
@@ -307,7 +308,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
 #nullable restore
-#line 83 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 85 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.PurchaseOrder.NumberOrder);
 
 #line default
@@ -342,7 +343,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\r\n");
 #nullable restore
-#line 90 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 92 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
                                  foreach (var supplier in Model.SupplierList)
                                 {
 
@@ -352,7 +353,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     WriteLiteral("                                ");
                     __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3c171cd2a1e90419e14f5c36822d813583170cb726511", async() => {
 #nullable restore
-#line 92 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 94 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
                                                       Write(supplier.SupplierName);
 
 #line default
@@ -364,7 +365,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
                     BeginWriteTagHelperAttribute();
 #nullable restore
-#line 92 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 94 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
                                   WriteLiteral(supplier.Id);
 
 #line default
@@ -382,7 +383,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\r\n");
 #nullable restore
-#line 93 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 95 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
                                 }
 
 #line default
@@ -395,7 +396,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
 #nullable restore
-#line 88 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 90 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.PurchaseOrder.SupplierId);
 
 #line default
@@ -419,7 +420,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
 #nullable restore
-#line 98 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 100 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.PurchaseOrder.Observation);
 
 #line default
@@ -444,7 +445,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_10);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
 #nullable restore
-#line 103 "C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
+#line 105 "C:\Users\juane\OneDrive\Mision TIC 2021\Ciclo 3\Desarrollo de Software\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\Pages\OrdenCompra.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.PurchaseOrder.Tax);
 
 #line default

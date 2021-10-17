@@ -12,23 +12,19 @@ namespace FalnconInventorySystem.App.Frontend.Pages
 {
     public class BillOrdeItemEditModel : PageModel
     {
-        private readonly IRepositoryBillOrder repositoryBillOrder;
         private readonly IRepositoryBillOrderItem repositoryBillOrderItem;
         private readonly IRepositoryProduct repositoryProduct;
         private readonly IRepositoryState repositoryState;
 
-        [TempData]
-        public int BillOrderID { get; set; } = 0;
         [BindProperty]
         public BillOrderItem BillOrderItem { get; set; }
         public Product Product { get; set; }
         public State State { get; set; }
-        
+
+
         public List<BillOrderItem> BillOrderItemsList { get; set; }
         public List<Product> ProductList { get; set; }
         public List<State> StateList { get; set; }
-
-        
 
         public BillOrdeItemEditModel(
             IRepositoryBillOrderItem repositoryBillOrderItem,
@@ -42,7 +38,7 @@ namespace FalnconInventorySystem.App.Frontend.Pages
         }
 
         public IEnumerable<Product> GetProducts()
-{
+        {
             var productList = repositoryProduct.GetAllProducts();
             return productList;
         }
@@ -52,6 +48,7 @@ namespace FalnconInventorySystem.App.Frontend.Pages
             var stateList = repositoryState.GetAllStates();
             return stateList;
         }
+
         public IActionResult OnGet(int? billOrderItemId)
         {
             if (billOrderItemId.HasValue)
@@ -62,12 +59,21 @@ namespace FalnconInventorySystem.App.Frontend.Pages
             {
                 BillOrderItem = new BillOrderItem();
             }
+
             ProductList = new List<Product>();
             ProductList.AddRange(GetProducts());
 
             StateList = new List<State>();
             StateList.AddRange(GetStates());
+
             return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            var UpdateBillOrderItem = BillOrderItem;
+            repositoryBillOrderItem.UpdateBillOrderItem(UpdateBillOrderItem);
+            return RedirectToPage("BillOrderDetails", new { BillOrderId = UpdateBillOrderItem.BillOrderId });
         }
     }
 }
