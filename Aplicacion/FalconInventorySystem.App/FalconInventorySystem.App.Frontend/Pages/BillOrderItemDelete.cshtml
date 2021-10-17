@@ -1,4 +1,25 @@
 ﻿@page
 @model FalnconInventorySystem.App.Frontend.Pages.BillOrdeItemDeleteModel
-@{
-}
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Item</h5>
+    </div>
+    <div class="modal-body-edit">
+        <form method="post">
+            <input type="hidden" asp-for="BillOrderItem.Id" />
+            <input type="hidden" asp-for="BillOrderItem.BillOrderId" />
+            <div class="form-confirm">
+                <label for="confirmacion">
+                    ¿Esta seguro que desea eliminar el item 
+                    @Model.BillOrderItem.Id?
+                </label>
+            </div>
+
+            <div class="modal-footer">
+                <a asp-page="/BillOrderDetails" asp-route-BillOrderId="@Model.BillOrderItem.BillOrderId" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Si, estoy seguro</button>
+            </div>
+        </form>
+    </div>
+</div>

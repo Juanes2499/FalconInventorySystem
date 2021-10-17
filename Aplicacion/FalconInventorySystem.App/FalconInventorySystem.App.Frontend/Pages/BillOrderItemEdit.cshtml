@@ -9,7 +9,7 @@
     <div class="modal-body-edit">
         <form method="post">
             <input type="hidden" asp-for="BillOrderItem.Id" />
-            
+            <input type="hidden" asp-for="BillOrderItem.BillOrderId" />
             <div class="form-group">
                 <label for="razon_social">Producto</label>
                 <select class="form-control" asp-for="BillOrderItem.ProductId">

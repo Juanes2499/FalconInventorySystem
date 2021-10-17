@@ -13,9 +13,7 @@ namespace FalconInventorySystem.App.Frontend.Pages
 {
     public class OrdenCompraItemEditModel : PageModel
     {
-        private readonly IRepositoryPurchaseOrder repositoryPurchaseOrder;
         private readonly IRepositoryPurchaseOrderItem repositoryPurchaseOrderItem;
-        private readonly IRepositorySupplier repositorySupplier;
         private readonly IRepositoryProduct repositoryProduct;
         private readonly IRepositoryState repositoryState;
 

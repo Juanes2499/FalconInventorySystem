@@ -13,8 +13,7 @@
                 <input type="text" class="input-medium search-query" name="s" placeholder="Search" value="">
             </div>
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Crear">
-                Crear Orden de Venta
+            <a asp-page=".\BillOrderDetails" class="btn btn-primary">Crear Orden de Venta</a>
         </div>
     </div>
 </div>
@@ -26,8 +25,9 @@
         <table class="table table-responsive-xl">
             <thead class="header-tabla">
                 <tr>
-                    <th class="header-tabla-titulo">Fecha creacion orden</th>  
-                    <th class="header-tabla-titulo">Cliente</th> 
+                    <th class="header-tabla-titulo">ID</th>
+                    <th class="header-tabla-titulo">Fecha creacion orden</th>
+                    <th class="header-tabla-titulo">Cliente</th>
                     <th class="header-tabla-titulo">Observación</th>
                     <th class="header-tabla-titulo">Fecha Creacion</th>
                     <th class="header-tabla-titulo">Fecha Actualizacion</th>
@@ -38,20 +38,23 @@
             <tbody class="table-body">
                 @foreach (var billOrder in Model.BillOrderList)
                 {
-                    <tr>
-                        <td>@billOrder.OrderCreationDate</td>
-                        <td>@billOrder.Client</td>
-                        <td>@billOrder.Observation</td>
-                        <td>@billOrder.CreationDate</td>
-                        <td>@billOrder.ModificationDate</td>
+                <tr>
+                    <td>@billOrder.Id</td>
+                    <td>@billOrder.OrderCreationDate</td>
+                    <td>@billOrder.Client</td>
+                    <td>@billOrder.Observation</td>
+                    <td>@billOrder.CreationDate</td>
+                    <td>@billOrder.ModificationDate</td>
 
-                        <td class="text-center">
-                            <a asp-page="/BillOrderEdit" asp-route-OrderBillId="@billOrder.Id"><i
-                                class="far fa-edit fa-2x"></i></a>
-                            <a asp-page="/BillOrderDelete" asp-route-OrderBillId="@billOrder.Id"><i
-                                class="fas fa-trash-alt fa-2x"></i></a>
-                        </td>
-                    </tr>
+                    <td class="text-center">
+                        <a asp-page="/BillOrderDetails" asp-route-BillOrderId="@billOrder.Id">
+                            <i class="far fa-edit fa-2x"></i>
+                        </a>
+                        <a asp-page="/BillOrderDelete" asp-route-BillOrderId="@billOrder.Id">
+                            <i class="fas fa-trash-alt fa-2x"></i>
+                        </a>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

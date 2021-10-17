@@ -26,6 +26,7 @@
         <table class="table table-responsive-xl">
             <thead class="header-tabla">
                 <tr>
+                    <th class="header-tabla-titulo">ID</th>
                     <th class="header-tabla-titulo">Número de orden</th>
                     <th class="header-tabla-titulo">Fecha Creación Orden</th>
                     <th class="header-tabla-titulo">Proveedor</th>
@@ -40,24 +41,25 @@
             <tbody class="table-body">
                 @foreach (var purchaseOrder in Model.PurchaseOrderList)
                 {
-                    <tr>
-                        <td>@purchaseOrder.NumberOrder</td>
-                        <td>@purchaseOrder.OrderCreationDate</td>
-                        <td>@purchaseOrder.Supplier.SupplierName</td>
-                        <td>@purchaseOrder.Observation</td>
-                        <td>@purchaseOrder.Tax</td>
-                        <td>@purchaseOrder.CreationDate</td>
-                        <td>@purchaseOrder.ModificationDate</td>
+                <tr>
+                    <td>@purchaseOrder.Id</td>
+                    <td>@purchaseOrder.NumberOrder</td>
+                    <td>@purchaseOrder.OrderCreationDate</td>
+                    <td>@purchaseOrder.Supplier.SupplierName</td>
+                    <td>@purchaseOrder.Observation</td>
+                    <td>@purchaseOrder.Tax</td>
+                    <td>@purchaseOrder.CreationDate</td>
+                    <td>@purchaseOrder.ModificationDate</td>
 
-                        <td class="text-center">
-                            <a asp-page="/OrdenCompraDetails" asp-route-PurchaseOrderId="@purchaseOrder.Id">
-                                <i class="far fa-edit fa-2x"></i>
-                            </a>
-                            <a asp-page="/OrdenCompraDelete" asp-route-PurchaseOrderId="@purchaseOrder.Id">
-                                <i class="fas fa-trash-alt fa-2x"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    <td class="text-center">
+                        <a asp-page="/OrdenCompraDetails" asp-route-PurchaseOrderId="@purchaseOrder.Id">
+                            <i class="far fa-edit fa-2x"></i>
+                        </a>
+                        <a asp-page="/OrdenCompraDelete" asp-route-PurchaseOrderId="@purchaseOrder.Id">
+                            <i class="fas fa-trash-alt fa-2x"></i>
+                        </a>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

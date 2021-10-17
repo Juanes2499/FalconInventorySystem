@@ -18,23 +18,21 @@ namespace FalnconInventorySystem.App.Frontend.Pages
         private readonly IRepositoryProduct repositoryProduct;
         private readonly IRepositoryState repositoryState;
 
-        [TempData]
-        public int BillOrderID { get; set; } = 0; 
+
         [BindProperty]
         public BillOrder BillOrder { get; set; }
         [BindProperty]
         public BillOrderItem BillOrderItem { get; set; }
-        public Supplier Supplier { get; set; }
         public Product Product { get; set; }
         public State State { get; set; }
 
 
         public List<BillOrder> BillOrderList { get; set; }
-        public List<BillOrderItem> BillOrderItemsList { get; set; }
+        public List<BillOrderItem> BillOrderItemList { get; set; }
         public List<Product> ProductList { get; set; }
         public List<State> StateList { get; set; }
 
-        public BillOrdeDetailsModel (
+        public BillOrdeDetailsModel(
             IRepositoryBillOrder repositoryBillOrder,
             IRepositoryBillOrderItem repositoryBillOrderItem,
             IRepositoryProduct repositoryProduct,
@@ -59,13 +57,13 @@ namespace FalnconInventorySystem.App.Frontend.Pages
             return stateList;
         }
 
-        public IEnumerable<BillOrderItem> GetBillOrderItemsByBillOrderId(int id)
+        public IEnumerable<BillOrderItem> GetBullOrderItemsByBillOrderId(int id)
         {
             var billOrderItemList = repositoryBillOrderItem.GetBillOrderItemByBillOrderId(id);
             return billOrderItemList;
         }
 
-        public IActionResult OnGet(int ? BillOrderId)
+        public IActionResult OnGet(int? BillOrderId)
         {
             if (BillOrderId.HasValue)
             {
@@ -83,20 +81,21 @@ namespace FalnconInventorySystem.App.Frontend.Pages
             StateList = new List<State>();
             StateList.AddRange(GetStates());
 
-            BillOrderItemsList = new List<BillOrderItem>();
+            BillOrderItemList = new List<BillOrderItem>();
             if (BillOrderId.HasValue)
             {
-                BillOrderItemsList.AddRange(GetBillOrderItemsByBillOrderId(BillOrderId.Value));
+                BillOrderItemList.AddRange(GetBullOrderItemsByBillOrderId(BillOrderId.Value));
             }
 
             return Page();
         }
 
-        public IActionResult OnPostOrdenCompra()
+        public IActionResult OnPostBillOrder()
         {
             var newBillOrder = BillOrder;
-            var billOrdenCreated = repositoryBillOrder.CreateBillOrder(newBillOrder);
-            HttpContext.Session.SetInt32("BillOrderID", billOrdenCreated.Id);
+            var billOrderCreated = repositoryBillOrder.CreateBillOrder(newBillOrder);
+            HttpContext.Session.SetInt32("BillOrderID", billOrderCreated.Id);
+
 
             ProductList = new List<Product>();
             ProductList.AddRange(GetProducts());
@@ -104,18 +103,17 @@ namespace FalnconInventorySystem.App.Frontend.Pages
             StateList = new List<State>();
             StateList.AddRange(GetStates());
 
-            BillOrderItemsList = new List<BillOrderItem>();
-
-            int POI = (int)HttpContext.Session.GetInt32("BillOrderID");
-            if (POI != 0)
+            BillOrderItemList = new List<BillOrderItem>();
+            int BOI = (int)HttpContext.Session.GetInt32("BillOrderID");
+            if (BOI != 0)
             {
-                BillOrderItemsList.AddRange(GetBillOrderItemsByBillOrderId(POI));
+                BillOrderItemList.AddRange(GetBullOrderItemsByBillOrderId(BOI));
             }
 
             return Page();
         }
 
-        public void OnPostOrdenCompraItem()
+        public void OnPostBillOrderItem()
         {
             BillOrderItem.BillOrderId = (int)HttpContext.Session.GetInt32("BillOrderID");
             repositoryBillOrderItem.CreateBillOrderItem(BillOrderItem);
@@ -126,11 +124,11 @@ namespace FalnconInventorySystem.App.Frontend.Pages
             StateList = new List<State>();
             StateList.AddRange(GetStates());
 
-            BillOrderItemsList = new List<BillOrderItem>();
-            int POI = (int)HttpContext.Session.GetInt32("BillOrderID");
-            if (POI != 0)
+            BillOrderItemList = new List<BillOrderItem>();
+            int BOI = (int)HttpContext.Session.GetInt32("BillOrderID");
+            if (BOI != 0)
             {
-                BillOrderItemsList.AddRange(GetBillOrderItemsByBillOrderId(POI));
+                BillOrderItemList.AddRange(GetBullOrderItemsByBillOrderId(BOI));
             }
         }
     }
