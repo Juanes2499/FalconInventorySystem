@@ -1,0 +1,26 @@
+﻿@page
+@model FalconInventorySystem.App.Frontend.Pages.ItemTransactionDeleteModel
+
+<div class="container-delete"
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Transacción</h5>
+        </div>
+        <div class="modal-body-edit">
+            <form method="post">
+                <input type="hidden" asp-for="ItemTransaction.Id" />
+                <div class="form-confirm">
+                    <label for="confirmacion">
+                        ¿Esta seguro que desea eliminar la transacción ID 
+                        @Model.ItemTransaction.Id?
+                    </label>
+                </div>
+
+                <div class="modal-footer">
+                    <a asp-page="/ItemTransaction" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Si, estoy seguro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

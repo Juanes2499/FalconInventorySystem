@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using FalconInventorySystem.App.Domain.Entities;
 using FalconInventorySystem.App.Persistence.Interfaces;
+
 namespace FalnconInventorySystem.App.Frontend.Pages
 {
     public class CategoryModel : PageModel

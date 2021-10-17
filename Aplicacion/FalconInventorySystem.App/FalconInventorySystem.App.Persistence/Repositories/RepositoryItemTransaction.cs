@@ -21,7 +21,12 @@ namespace FalconInventorySystem.App.Persistence.Repositories
 
         public ItemTransaction CreateItemTransaction(ItemTransaction itemTransaction)
         {
-            var itemTransactionCreate = appDbContext.ItemTransactions.Add(itemTransaction);
+            var createItemTransaction = itemTransaction;
+            createItemTransaction.PurchaseOrderItemId = createItemTransaction.PurchaseOrderItemId == 0 ? null : createItemTransaction.PurchaseOrderItemId;
+            createItemTransaction.WarehouseId = createItemTransaction.WarehouseId == 0 ? null : createItemTransaction.WarehouseId;
+            createItemTransaction.BillOrderItemId = createItemTransaction.BillOrderItemId == 0 ? null : createItemTransaction.BillOrderItemId;
+
+            var itemTransactionCreate = appDbContext.ItemTransactions.Add(createItemTransaction);
             appDbContext.SaveChanges();
             return itemTransactionCreate.Entity;
         }
@@ -41,6 +46,10 @@ namespace FalconInventorySystem.App.Persistence.Repositories
         public Boolean UpdateItemTransaction(ItemTransaction itemTransaction)
         {
             var updated = false;
+
+            itemTransaction.PurchaseOrderItemId = itemTransaction.PurchaseOrderItemId == 0 ? null : itemTransaction.PurchaseOrderItemId;
+            itemTransaction.WarehouseId = itemTransaction.WarehouseId == 0 ? null : itemTransaction.WarehouseId;
+            itemTransaction.BillOrderItemId = itemTransaction.BillOrderItemId == 0 ? null : itemTransaction.BillOrderItemId;
 
             var itemTransactionFound = appDbContext.ItemTransactions.FirstOrDefault(x => x.Id == itemTransaction.Id);
             if (itemTransactionFound != null)
