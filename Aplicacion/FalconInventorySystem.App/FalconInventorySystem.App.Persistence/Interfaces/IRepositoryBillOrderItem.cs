@@ -11,6 +11,7 @@ namespace FalconInventorySystem.App.Persistence.Interfaces
         BillOrderItem CreateBillOrderItem(BillOrderItem billOrderItem);
         IEnumerable<BillOrderItem> GetAllBillOrderItems();
         BillOrderItem GetBillOrderItemId(int id);
+        IEnumerable<BillOrderItem> GetBillOrderItemByBillOrderId(int id);
         Boolean UpdateBillOrderItem(BillOrderItem billOrderItem);
         Boolean DeleteBillOrderItem(int id);
     }

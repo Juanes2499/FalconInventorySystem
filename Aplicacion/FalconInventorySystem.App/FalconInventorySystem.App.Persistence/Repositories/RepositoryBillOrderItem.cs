@@ -37,6 +37,15 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             return billOrderItem;
         }
 
+        public IEnumerable<BillOrderItem> GetBillOrderItemByBillOrderId(int id)
+        {
+            var billOrderItem = appDbContext.BillOrderItems
+                .Where(x => x.BillOrderId == id)
+                .Include(x => x.Product)
+                .Include(x => x.State);
+            return billOrderItem;
+        }
+
         public Boolean UpdateBillOrderItem(BillOrderItem billOrderItem)
         {
             var updated = false;
