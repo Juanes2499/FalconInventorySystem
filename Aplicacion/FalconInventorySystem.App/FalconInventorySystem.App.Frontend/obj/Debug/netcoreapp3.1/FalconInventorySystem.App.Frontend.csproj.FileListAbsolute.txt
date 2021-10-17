@@ -398,3 +398,4 @@ C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySys
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenCompraDetails.cshtml.g.cs
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenCompraItemEdit.cshtml.g.cs
 C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\ProductoDelete.cshtml.g.cs
+C:\Users\Bryan\Desktop\Dev\C#\Proyectos\FalconInventorySystem\FalconInventorySystem\Aplicacion\FalconInventorySystem.App\FalconInventorySystem.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\OrdenCompraItemDelete.cshtml.g.cs
