@@ -19,7 +19,7 @@ using FalconInventorySystem.App.Frontend;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3fb2a6b195d2fce10b1d1b065f478d951aec9b1b", @"/Pages/Category.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f121a2388049b00b3aa2040fc2c4cd82ab3660f9", @"/Pages/Category.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c284d041bf7e2a67c4dcd8122a3bcdd82b896f5f", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Category : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
@@ -62,13 +62,13 @@ using FalconInventorySystem.App.Frontend;
     <div class=""d-flex justify-content-between"">
         <a class=""back-dashboard"" href=""Dashboard"">
             <img src=""https://img.icons8.com/ios-filled/50/000000/back.png"" />
-            Proveedores
+            Categorías
         </a>
         <div class=""button-search row"">
 
             <div class=""input-append"">
                 <input type=""text"" class=""input-medium search-query"" name=""s"" placeholder=""Search""");
-            BeginWriteAttribute("value", " value=\"", 508, "\"", 516, 0);
+            BeginWriteAttribute("value", " value=\"", 507, "\"", 515, 0);
             EndWriteAttribute();
             WriteLiteral(@">
             </div>

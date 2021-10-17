@@ -54,12 +54,6 @@ namespace FalconInventorySystem.App.Frontend.Pages
             return stateList;
         }
 
-        //public PurchaseOrderItem GetPurchaseOrderItemsById(int id)
-        //{
-        //    var purchaseOrderItem = repositoryPurchaseOrderItem.GetPurchaseOrderItemById(id);
-        //    return purchaseOrderItem;
-        //}
-
         public IActionResult OnGet(int? purchaseOrderItemId)
         {
             if (purchaseOrderItemId.HasValue)
@@ -80,52 +74,12 @@ namespace FalconInventorySystem.App.Frontend.Pages
             return Page();
         }
 
-        //public IActionResult OnPostOrdenCompra()
-        //{
-        //    var newPurchaseOrder = PurchaseOrder;
-        //    var ordenCompraCreated = repositoryPurchaseOrder.CreatePurchaseOrder(newPurchaseOrder);
-        //    HttpContext.Session.SetInt32("PurchaseOrderID", ordenCompraCreated.Id);
-
-        //    SupplierList = new List<Supplier>();
-        //    SupplierList.AddRange(GetSuppliers());
-
-        //    ProductList = new List<Product>();
-        //    ProductList.AddRange(GetProducts());
-
-        //    StateList = new List<State>();
-        //    StateList.AddRange(GetStates());
-
-        //    PurchaseOrderItemsList = new List<PurchaseOrderItem>();
-
-        //    int POI = (int)HttpContext.Session.GetInt32("PurchaseOrderID");
-        //    if (POI != 0)
-        //    {
-        //        PurchaseOrderItemsList.AddRange(GetPurchaseOrderItemsByPurchaseOrderId(POI));
-        //    }
-
-        //    return Page();
-        //}
-
-        //public void OnPostOrdenCompraItem()
-        //{
-        //    PurchaseOrderItem.PurchaseOrderId = (int)HttpContext.Session.GetInt32("PurchaseOrderID");
-        //    repositoryPurchaseOrderItem.CreatePurchaseOrderItem(PurchaseOrderItem);
-
-        //    SupplierList = new List<Supplier>();
-        //    SupplierList.AddRange(GetSuppliers());
-
-        //    ProductList = new List<Product>();
-        //    ProductList.AddRange(GetProducts());
-
-        //    StateList = new List<State>();
-        //    StateList.AddRange(GetStates());
-
-        //    PurchaseOrderItemsList = new List<PurchaseOrderItem>();
-        //    int POI = (int)HttpContext.Session.GetInt32("PurchaseOrderID");
-        //    if (POI != 0)
-        //    {
-        //        PurchaseOrderItemsList.AddRange(GetPurchaseOrderItemsByPurchaseOrderId(POI));
-        //    }
-        //}
+        public IActionResult OnPost()
+        {
+            var UpdatePurchaseOrderItem = PurchaseOrderItem;
+            var pruebaId = PurchaseOrderItem.PurchaseOrderId;
+            repositoryPurchaseOrderItem.UpdatePurchaseOrderItem(UpdatePurchaseOrderItem);
+            return RedirectToPage("OrdenCompraDetails", new { PurchaseOrderId = PurchaseOrderItem.PurchaseOrderId});
+        }
     }
 }

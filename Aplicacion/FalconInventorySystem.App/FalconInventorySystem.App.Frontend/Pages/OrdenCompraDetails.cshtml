@@ -13,10 +13,6 @@
         <form method="post">
             <input type="hidden" asp-for="PurchaseOrder.Id" />
             <div class="form-group">
-                <label for="nombre-producto">ID</label>
-                <input class="form-control" aasp-for="PurchaseOrder.Id" disabled>
-            </div>
-            <div class="form-group">
                 <label for="nombre-producto">Número Orden de Compra</label>
                 <input type="text" class="form-control" asp-for="PurchaseOrder.NumberOrder"
                        placeholder="Numero Orden">
@@ -79,7 +75,7 @@
                                 <a asp-page="/OrdenCompraItemEdit" asp-route-purchaseOrderItemId="@purchaseOrderItem.Id">
                                     <i class="far fa-edit fa-2x"></i>
                                 </a>
-                                <a asp-page="/BodegaDelete" asp-route-purchaseOrderItemId="@purchaseOrderItem.Id">
+                                <a asp-page="/OrdenCompraItemDelete" asp-route-purchaseOrderItemId="@purchaseOrderItem.Id">
                                     <i class="fas fa-trash-alt fa-2x"></i>
                                 </a>
                             </td>
