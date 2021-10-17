@@ -72,10 +72,10 @@
                             <td>@purchaseOrderItem.ModificationDate</td>
 
                             <td class="text-center">
-                                <a asp-page="/OrdenCompraItemEdit" asp-route-purchaseOrderItemId="@purchaseOrderItem.Id">
+                                <a class="btn btn-success" asp-page="/OrdenCompraItemEdit" asp-route-purchaseOrderItemId="@purchaseOrderItem.Id">
                                     <i class="far fa-edit fa-2x"></i>
                                 </a>
-                                <a asp-page="/OrdenCompraItemDelete" asp-route-purchaseOrderItemId="@purchaseOrderItem.Id">
+                                <a class="btn btn-danger" asp-page="/OrdenCompraItemDelete" asp-route-purchaseOrderItemId="@purchaseOrderItem.Id">
                                     <i class="fas fa-trash-alt fa-2x"></i>
                                 </a>
                             </td>

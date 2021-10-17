@@ -53,10 +53,10 @@
                             <td>@billOrderItem.ModificationDate</td>
 
                             <td class="text-center">
-                                <a asp-page="/BillOrderItemEdit" asp-route-billOrderItemId="@billOrderItem.Id">
+                                <a class="btn btn-success" asp-page="/BillOrderItemEdit" asp-route-billOrderItemId="@billOrderItem.Id">
                                     <i class="far fa-edit fa-2x"></i>
                                 </a>
-                                <a asp-page="/BillOrderItemDelete" asp-route-billOrderItemId="@billOrderItem.Id">
+                                <a class="btn btn-danger" asp-page="/BillOrderItemDelete" asp-route-billOrderItemId="@billOrderItem.Id">
                                     <i class="fas fa-trash-alt fa-2x"></i>
                                 </a>
                             </td>

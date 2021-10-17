@@ -10,7 +10,7 @@
             <form method="post">
                 <input type="hidden" asp-for="BillOrder.Id" />
                 <div class="form-confirm">
-                    <label for="confirmacion">¿Esta seguro que desea eliminar la orden de venta?</label>
+                    <label for="confirmacion">¿Esta seguro que desea eliminar la orden de venta @Model.BillOrder.Id?</label>
                 </div>
             
                 <div class="modal-footer">
