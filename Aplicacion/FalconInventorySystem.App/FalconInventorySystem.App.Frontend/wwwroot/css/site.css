@@ -1,0 +1,252 @@
+﻿/* Configuracion preliminares */
+/* Para este caso no usaremos REM
+html {
+  position: relative;
+  min-height: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px, se usan los rem para trabajar*
+}
+*/
+
+*, *:before, *:after {
+  box-sizing: inherit;
+} /* Se elimina el box sizing por defecto */ 
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f1f1f1;
+  text-align: center;
+ 
+}
+
+/* Estilos para el login */
+.card:hover {
+  margin-bottom: 20px;
+  border: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  box-shadow: 1px 5px 10px#00000029;
+  cursor: pointer;
+}
+
+.box {
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transition: 0.25s;
+  margin-top: 100px;
+  box-shadow: 1px 5px 10px #00000029;
+  background-color: #ffffff;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  padding: 18px 30px;
+  text-align: left;
+  box-shadow: 1px 5px 10px#00000029;
+  border-width: 0.5px;
+  border-color: #ecefeb;
+  border-style: solid;
+  width: 350px;
+  outline: none;
+  color: black;
+  border-radius: 10px;
+}
+
+/* Icons FontAwesome for login */
+
+.user {
+  position: relative;
+}
+
+.user i {
+  position: absolute;
+  left: 45px;
+  top: 22px;
+  color: #0f1055;
+}
+
+.password {
+  position: relative;
+}
+
+.password i {
+  position: absolute;
+  left: 45px;
+  top: 22px;
+  color: #0f1055;
+}
+
+.box h2 {
+  color: #0f1055;
+  font-size: 20px;
+}
+
+.text-muted span {
+  color: #0f1055;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: #0f1055;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #0f1055;
+  padding: 0px 40px;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 350px;
+
+  height: 30px;
+}
+
+/* Footer Styles */
+.footer {
+
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 40px; /* Vertically center the text there */
+}
+/* Style for tables*/
+.container-table{
+  width: 95%;
+  margin:0 auto;
+}
+
+.first-column-table{
+  background-color: #0f1055;
+}
+
+.color-texto{
+  color:white;
+}
+
+/* Hover sobre las filas impares e impares */
+.table-striped tbody tr:nth-of-type(odd){
+  background-color: white;
+}
+.table-striped tbody tr:nth-of-type(odd):hover,
+.table-striped tbody tr:nth-of-type(even):hover{
+  background-color: rgba(0,0,0,.05);
+}
+
+
+/* Color de los bordes de la tabla*/
+.table-bordered td{
+  border-color:#0f1055;
+}
+.table-bordered th{
+  border-color: white;
+}
+
+/******************/
+/* Styles para los formularios, delete, edit */
+.container-delete{
+    width: 70%;
+    margin: 5rem auto;
+}
+
+.container-edit{
+    width: 70%;
+    margin: 2rem auto;
+}
+/*style dashboard */
+.card-body {
+  padding: 50px 50px 50px 50px;
+}
+
+.container .dashboard{
+    margin-top:15rem;
+}
+
+.small-title-dashboard{
+  color: #0f1055;
+  font-weight: bold;
+}
+
+.header-tabla{
+  background-color: #a1a1ae;
+}
+
+.header-tabla-titulo{
+  font-family: Arial;
+  color: #0F1055;
+}
+
+.back-dashboard img{
+  height: 15px;
+}
+
+.container{
+  margin-top:5%;
+}
+
+.btn-primary{
+  background-color: #0f1055;
+}
+
+.btn-primary.crear{
+  font-weight: bold;
+  border-radius: 1rem;
+  border-color: #0f1055;
+}
+
+.btn-primary.crear:hover{
+  font-weight: bold;
+  border-radius: 1rem;
+  color: #0f1055;
+  border-color: #0f1055;
+  background-color: white;
+}
+
+.back-dashboard{
+  color: #0f1055;
+}
+
+.table-body{
+  background-color: #ffff
+}
+.modal-header{
+  background-color: #0f1055;
+  color: #fff
+}
+.close{
+  color: #ffffff;
+}
+
+.form-group{
+  text-align: left;
+}
+
+.modal-body{
+  margin: 1rem;
+}
+
+.modal-body-edit{
+  margin: 5rem;
+}
+
+.form-confirm{
+  text-align: center;
+}

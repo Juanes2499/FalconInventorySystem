@@ -1,0 +1,43 @@
+﻿@page
+@model FalconInventorySystem.App.Frontend.Pages.OrdenCompraItemEditModel
+
+<div class="contaier-edit">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar Item</h5>
+        </div>
+        <div class="modal-body-edit">
+            <form method="post">
+                <input type="hidden" asp-for="PurchaseOrderItem.Id" />
+                <input type="hidden" asp-for="PurchaseOrderItem.PurchaseOrderId" />
+                <input type="hidden" asp-for="PurchaseOrderItem.StateId" />
+                <div class="form-group">
+                    <label for="razon_social">Producto</label>
+                    <select class="form-control" asp-for="PurchaseOrderItem.ProductId">
+                        <option value="">Seleccionar un producto</option>
+                        @foreach (var product in Model.ProductList)
+                        {
+                            <option value=@product.Id>@product.ProductName</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="razon_social">Cantidad</label>
+                    <input type="text" class="form-control" asp-for="PurchaseOrderItem.Amount" placeholder="Cantidad">
+                </div>
+                <div class="form-group">
+                    <label for="razon_social">Valor unitario</label>
+                    <input type="text" class="form-control" asp-for="PurchaseOrderItem.UnitValue" placeholder="Valor unitario">
+                </div>
+                <div class="form-group">
+                    <label for="razon_social">Observación</label>
+                    <input type="text" class="form-control" asp-for="PurchaseOrderItem.Observation" placeholder="Observación">
+                </div>
+                <div class="modal-footer">
+                    <a asp-page="/OrdenCompraDetails" asp-route-PurchaseOrderId="@Model.PurchaseOrderItem.PurchaseOrderId" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary" asp-page-handler="OrdenCompraItem">Actualizar Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

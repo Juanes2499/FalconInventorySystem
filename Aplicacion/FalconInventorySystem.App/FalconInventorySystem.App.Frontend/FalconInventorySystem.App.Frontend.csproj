@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\FalconInventorySystem.App.Domain\FalconInventorySystem.App.Domain.csproj" />
+    <ProjectReference Include="..\FalconInventorySystem.App.Persistence\FalconInventorySystem.App.Persistence.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>
