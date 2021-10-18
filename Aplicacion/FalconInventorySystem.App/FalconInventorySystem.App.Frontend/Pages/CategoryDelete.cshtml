@@ -1,0 +1,26 @@
+﻿@page
+@model FalnconInventorySystem.App.Frontend.Pages.CategoryDeleteModel
+
+<div class="container-delete">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Categoría</h5>
+        </div>
+        <div class="modal-body-edit">
+            <form method="post">
+                <input type="hidden" asp-for="Category.Id" />
+                <div class="form-confirm">
+                    <label for="confirmacion">
+                        ¿Esta seguro que desea eliminar la categoría
+                        @Model.Category.CategoryName?
+                    </label>
+                </div>
+
+                <div class="modal-footer">
+                    <a asp-page="/Category" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Si, estoy seguro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

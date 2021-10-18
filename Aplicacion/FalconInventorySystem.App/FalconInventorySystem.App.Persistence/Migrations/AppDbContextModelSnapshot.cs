@@ -321,7 +321,7 @@ namespace FalconInventorySystem.App.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("States");
+                    b.ToTable("TransactionStates");
                 });
 
             modelBuilder.Entity("FalconInventorySystem.App.Domain.Entities.Supplier", b =>

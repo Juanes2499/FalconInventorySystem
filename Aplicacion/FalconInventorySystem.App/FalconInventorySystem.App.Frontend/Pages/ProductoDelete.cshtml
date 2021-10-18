@@ -1,0 +1,26 @@
+﻿@page
+@model FalconInventorySystem.App.Frontend.Pages.ProductoDeleteModel
+
+<div class="container-delete">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Producto</h5>
+        </div>
+        <div class="modal-body-edit">
+            <form method="post">
+                <input type="hidden" asp-for="Product.Id" />
+                <div class="form-confirm">
+                    <label for="confirmacion">
+                        ¿Esta seguro que desea eliminar el producto 
+                        @Model.Product.ProductName?
+                    </label>
+                </div>
+
+                <div class="modal-footer">
+                    <a asp-page="/Producto" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Si, estoy seguro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FalconInventorySystem.App.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211008015417_EntitiesAreCreated")]
-    partial class EntitiesAreCreated
+    [Migration("20211016040459_TablesCreated")]
+    partial class TablesCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -323,7 +323,7 @@ namespace FalconInventorySystem.App.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("States");
+                    b.ToTable("TransactionStates");
                 });
 
             modelBuilder.Entity("FalconInventorySystem.App.Domain.Entities.Supplier", b =>

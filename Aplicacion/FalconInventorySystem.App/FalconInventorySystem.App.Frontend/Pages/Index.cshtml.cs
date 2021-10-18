@@ -17,9 +17,9 @@ namespace FalconInventorySystem.App.Frontend.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnPost()
         {
-
+            return RedirectToPage("./Dashboard");
         }
     }
 }
