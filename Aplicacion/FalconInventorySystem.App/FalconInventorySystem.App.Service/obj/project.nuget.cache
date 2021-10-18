@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hQTPhxuSQ5blJSZwoRRLUnOzm2fJRkmyW5uZWj/bYpnRnYxWzia9L1NtDoiFAd7xJi/vT6jKqZlwyiGQJ0BdFw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\ProyectoTransversal\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Service\\FalconInventorySystem.App.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\juane\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.15\\microsoft.netcore.app.host.win-x64.3.1.15.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,49 @@
+﻿@page
+@model FalconInventorySystem.App.Frontend.Pages.ProductoEditModel
+
+<div class="container-edit">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar Producto</h5>
+        </div>
+        <div class="modal-body-edit">
+            <form method="post">
+                <input type="hidden" asp-for="Product.Id" />
+                <div class="form-group">
+                    <label for="nombre-producto">Nombre producto</label>
+                    <input type="text" class="form-control" asp-for="Product.ProductName"
+                        placeholder="Nombre Producto">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" asp-for="Product.Description"
+                        placeholder="Ingrese informacion adicional">
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <select class="form-control" asp-for="Product.BrandId">
+                        <option value="">Seleccionar una marca</option>
+                        @foreach (var brand in Model.BrandsList)
+                        {
+                            <option value=@brand.Id>@brand.BrandName</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select class="form-control" asp-for="Product.CategoryId">
+                        <option value="">Seleccionar una categoría</option>
+                        @foreach (var categoria in Model.CategoriesList)
+                        {
+                            <option value=@categoria.Id>@categoria.CategoryName</option>
+                        }
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <a asp-page="/Producto" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Actualizar Producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
