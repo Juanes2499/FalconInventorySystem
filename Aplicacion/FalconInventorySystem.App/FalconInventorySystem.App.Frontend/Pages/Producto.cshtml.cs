@@ -11,39 +11,69 @@ namespace FalconInventorySystem.App.Frontend.Pages
 {
     public class ProductoModel : PageModel
     {
-       private readonly IRepositoryProduct repositoryProduct;
+        
+        private readonly IRepositoryProduct repositoryProduct;
+        private readonly IRepositoryBrand repositoryBrand;
+        private readonly IRepositoryCategory repositoryCategory;
 
-       [BindProperty]
+        [BindProperty]
         public Product Product { get; set; }
-        public List<Product> ProductsList { get; set; }
+        public Brand Brand  { get; set; }
+        public Category Category { get; set; }
 
-        public ProductoModel (IRepositoryProduct repositoryProduct)
+        public List<Product> ProductsList { get; set; }
+        public List<Brand> BrandsList { get; set; }
+        public List<Category> CategoriesList { get; set; }
+
+        public ProductoModel (
+                IRepositoryProduct repositoryProduct,
+                IRepositoryBrand repositoryBrand,
+                IRepositoryCategory repositoryCategory
+        )
         {
             this.repositoryProduct = repositoryProduct;
+            this.repositoryBrand = repositoryBrand;
+            this.repositoryCategory = repositoryCategory;
         }
-/*
+
         public IEnumerable<Product> GetProducts()
         {
             var productList = repositoryProduct.GetAllProducts();
             return productList;
         }
-        
+
+        public IEnumerable<Brand> GetBrands()
+        {
+            var brandsList = repositoryBrand.GetAllBrands();
+            return brandsList;
+        }
+
+        public IEnumerable<Category> GetCategories()
+        {
+            var categoriesList = repositoryCategory.GetAllCategories();
+            return categoriesList;
+        }
+
         public void OnGet()
         {
             ProductsList = new List<Product>();
-            ProductsList.AddRange(GetProducts());  
+            ProductsList.AddRange(GetProducts());
+
+            BrandsList = new List<Brand>();
+            BrandsList.AddRange(GetBrands());
+
+            CategoriesList = new List<Category>();
+            CategoriesList.AddRange(GetCategories());
         }
 
         public IActionResult OnPost()
         {
             var newProduct = Product;
-            var productCreated = repositoryProduct.CreateProduct(newProduct);
+            var ProductCreated = repositoryProduct.CreateProduct(newProduct);
             Product = null;
             ProductsList = new List<Product>();
             ProductsList.AddRange(GetProducts());
             return RedirectToPage("Producto");
         }
-*/
-
     }
 }

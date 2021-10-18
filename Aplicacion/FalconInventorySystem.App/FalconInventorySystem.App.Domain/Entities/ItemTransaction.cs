@@ -19,15 +19,15 @@ namespace FalconInventorySystem.App.Domain.Entities
         public int Amount { get; set; }
 
 
-        public int PurchaseOrderItemId { get; set; } //PurchaseOrderItem relation - una trasanction puede tener un Item de orden de compra
+        public int? PurchaseOrderItemId { get; set; } //PurchaseOrderItem relation - una trasanction puede tener un Item de orden de compra
         public PurchaseOrderItem PurchaseOrderItem { get; set; }
 
 
-        public int WarehouseId { get; set; } //Warehouse relation - una trasanction puede tener una bodega asociada
+        public int? WarehouseId { get; set; } //Warehouse relation - una trasanction puede tener una bodega asociada
         public Warehouse Warehouse { get; set; }
 
 
-        public int BillOrderItemId { get; set; } //BillOrderItem relation - una trasanction puede tener un Item de orden de venta
+        public int? BillOrderItemId { get; set; } //BillOrderItem relation - una trasanction puede tener un Item de orden de venta
         public BillOrderItem BillOrderItem { get; set; }
 
 
