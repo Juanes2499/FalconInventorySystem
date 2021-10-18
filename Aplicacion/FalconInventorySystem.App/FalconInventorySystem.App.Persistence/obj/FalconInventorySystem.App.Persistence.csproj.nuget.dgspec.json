@@ -1,29 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj": {}
+    "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {
+    "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
         "projectName": "FalconInventorySystem.App.Domain",
-        "projectPath": "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
-        "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\obj\\",
+        "projectPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj",
+        "packagesPath": "C:\\Users\\juane\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bryan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\juane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://tecnoquimicas.pkgs.visualstudio.com/0468231a-f1d0-4672-a772-1696f80fc9d0/_packaging/autocadenavalortest/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +39,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -50,33 +55,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.5.21302.13\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj": {
+    "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj",
         "projectName": "FalconInventorySystem.App.Persistence",
-        "projectPath": "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj",
-        "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\obj\\",
+        "projectPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\FalconInventorySystem.App.Persistence.csproj",
+        "packagesPath": "C:\\Users\\juane\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bryan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\juane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://tecnoquimicas.pkgs.visualstudio.com/0468231a-f1d0-4672-a772-1696f80fc9d0/_packaging/autocadenavalortest/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {
-                "projectPath": "C:\\Users\\Bryan\\Desktop\\Dev\\C#\\Proyectos\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj"
+              "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj": {
+                "projectPath": "C:\\Users\\juane\\OneDrive\\Mision TIC 2021\\Ciclo 3\\Desarrollo de Software\\FalconInventorySystem\\Aplicacion\\FalconInventorySystem.App\\FalconInventorySystem.App.Domain\\FalconInventorySystem.App.Domain.csproj"
               }
             }
           }
@@ -89,6 +98,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -126,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.5.21302.13\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,6 +10,7 @@
             <form method="post">
                 <input type="hidden" asp-for="PurchaseOrderItem.Id" />
                 <input type="hidden" asp-for="PurchaseOrderItem.PurchaseOrderId" />
+                <input type="hidden" asp-for="PurchaseOrderItem.StateId" />
                 <div class="form-group">
                     <label for="razon_social">Producto</label>
                     <select class="form-control" asp-for="PurchaseOrderItem.ProductId">
@@ -31,16 +32,6 @@
                 <div class="form-group">
                     <label for="razon_social">Observación</label>
                     <input type="text" class="form-control" asp-for="PurchaseOrderItem.Observation" placeholder="Observación">
-                </div>
-                <div class="form-group">
-                    <label for="razon_social">Estado</label>
-                    <select class="form-control" asp-for="PurchaseOrderItem.StateId">
-                        <option value="">Seleccionar un estado</option>
-                        @foreach (var state in Model.StateList)
-                        {
-                            <option value=@state.Id>@state.StateName</option>
-                        }
-                    </select>
                 </div>
                 <div class="modal-footer">
                     <a asp-page="/OrdenCompraDetails" asp-route-PurchaseOrderId="@Model.PurchaseOrderItem.PurchaseOrderId" class="btn btn-secondary">Cancelar</a>

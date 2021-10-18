@@ -133,6 +133,7 @@ namespace FalconInventorySystem.App.Frontend.Pages
         public void OnPostOrdenCompraItem()
         {
             PurchaseOrderItem.PurchaseOrderId = (int)HttpContext.Session.GetInt32("PurchaseOrderID");
+            PurchaseOrderItem.StateId = 2;
             repositoryPurchaseOrderItem.CreatePurchaseOrderItem(PurchaseOrderItem);
 
             SupplierList = new List<Supplier>();

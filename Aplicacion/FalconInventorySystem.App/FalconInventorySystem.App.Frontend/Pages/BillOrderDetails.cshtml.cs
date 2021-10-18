@@ -116,6 +116,7 @@ namespace FalnconInventorySystem.App.Frontend.Pages
         public void OnPostBillOrderItem()
         {
             BillOrderItem.BillOrderId = (int)HttpContext.Session.GetInt32("BillOrderID");
+            BillOrderItem.StateId = 2;
             repositoryBillOrderItem.CreateBillOrderItem(BillOrderItem);
 
             ProductList = new List<Product>();

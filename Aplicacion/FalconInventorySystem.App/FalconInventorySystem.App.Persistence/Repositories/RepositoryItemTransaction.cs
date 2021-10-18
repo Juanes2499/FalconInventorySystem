@@ -26,6 +26,43 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             createItemTransaction.WarehouseId = createItemTransaction.WarehouseId == 0 ? null : createItemTransaction.WarehouseId;
             createItemTransaction.BillOrderItemId = createItemTransaction.BillOrderItemId == 0 ? null : createItemTransaction.BillOrderItemId;
 
+            if(createItemTransaction.PurchaseOrderItemId != null && createItemTransaction.WarehouseId != null)
+            {
+                var PurchaseOrderItemFound = appDbContext.PurchaseOrderItems.FirstOrDefault(x => x.Id == createItemTransaction.PurchaseOrderItemId);
+                if(createItemTransaction.Amount == PurchaseOrderItemFound.Amount)
+                {
+                    PurchaseOrderItemFound.StateId = 3;
+                }else if(createItemTransaction.Amount < PurchaseOrderItemFound.Amount)
+                {
+                    PurchaseOrderItemFound.StateId = 6;
+                }
+                else if (createItemTransaction.Amount > PurchaseOrderItemFound.Amount)
+                {
+                    PurchaseOrderItemFound.StateId = 8;
+                }
+                appDbContext.PurchaseOrderItems.Update(PurchaseOrderItemFound);
+                appDbContext.SaveChanges();
+            }
+
+            if (createItemTransaction.BillOrderItemId != null && createItemTransaction.WarehouseId != null)
+            {
+                var BillOrderItemFound = appDbContext.BillOrderItems.FirstOrDefault(x => x.Id == createItemTransaction.BillOrderItemId);
+                if (createItemTransaction.Amount == BillOrderItemFound.Amount)
+                {
+                    BillOrderItemFound.StateId = 4;
+                }
+                else if (createItemTransaction.Amount < BillOrderItemFound.Amount)
+                {
+                    BillOrderItemFound.StateId = 7;
+                }
+                else if (createItemTransaction.Amount > BillOrderItemFound.Amount)
+                {
+                    BillOrderItemFound.StateId = 5;
+                }
+                appDbContext.BillOrderItems.Update(BillOrderItemFound);
+                appDbContext.SaveChanges();
+            }
+
             var itemTransactionCreate = appDbContext.ItemTransactions.Add(createItemTransaction);
             appDbContext.SaveChanges();
             return itemTransactionCreate.Entity;
@@ -50,6 +87,44 @@ namespace FalconInventorySystem.App.Persistence.Repositories
             itemTransaction.PurchaseOrderItemId = itemTransaction.PurchaseOrderItemId == 0 ? null : itemTransaction.PurchaseOrderItemId;
             itemTransaction.WarehouseId = itemTransaction.WarehouseId == 0 ? null : itemTransaction.WarehouseId;
             itemTransaction.BillOrderItemId = itemTransaction.BillOrderItemId == 0 ? null : itemTransaction.BillOrderItemId;
+
+            if (itemTransaction.PurchaseOrderItemId != null && itemTransaction.WarehouseId != null)
+            {
+                var PurchaseOrderItemFound = appDbContext.PurchaseOrderItems.FirstOrDefault(x => x.Id == itemTransaction.PurchaseOrderItemId);
+                if (itemTransaction.Amount == PurchaseOrderItemFound.Amount)
+                {
+                    PurchaseOrderItemFound.StateId = 3;
+                }
+                else if (itemTransaction.Amount < PurchaseOrderItemFound.Amount)
+                {
+                    PurchaseOrderItemFound.StateId = 6;
+                }
+                else if (itemTransaction.Amount > PurchaseOrderItemFound.Amount)
+                {
+                    PurchaseOrderItemFound.StateId = 8;
+                }
+                appDbContext.PurchaseOrderItems.Update(PurchaseOrderItemFound);
+                appDbContext.SaveChanges();
+            }
+
+            if (itemTransaction.BillOrderItemId != null && itemTransaction.WarehouseId != null)
+            {
+                var BillOrderItemFound = appDbContext.BillOrderItems.FirstOrDefault(x => x.Id == itemTransaction.BillOrderItemId);
+                if (itemTransaction.Amount == BillOrderItemFound.Amount)
+                {
+                    BillOrderItemFound.StateId = 4;
+                }
+                else if (itemTransaction.Amount < BillOrderItemFound.Amount)
+                {
+                    BillOrderItemFound.StateId = 7;
+                }
+                else if (itemTransaction.Amount > BillOrderItemFound.Amount)
+                {
+                    BillOrderItemFound.StateId = 5;
+                }
+                appDbContext.BillOrderItems.Update(BillOrderItemFound);
+                appDbContext.SaveChanges();
+            }
 
             var itemTransactionFound = appDbContext.ItemTransactions.FirstOrDefault(x => x.Id == itemTransaction.Id);
             if (itemTransactionFound != null)

@@ -55,7 +55,8 @@
 
                                 <td class="text-center">
                                     <a class="btn btn-success" asp-page="/BillOrderItemEdit" asp-route-billOrderItemId="@billOrderItem.Id">
-                                        <i class="far fa-edit fa-1color-texto                         </a>
+                                        <i class="far fa-edit fa-1x"></i>                       
+                                    </a>
                                     <a class="btn btn-danger" asp-page="/BillOrderItemDelete" asp-route-billOrderItemId="@billOrderItem.Id">
                                         <i class="fas fa-trash-alt fa-1x"></i>
                                     </a>
@@ -96,16 +97,6 @@
                                 <div class="form-group">
                                     <label for="razon_social">Observación</label>
                                     <input type="text" class="form-control" asp-for="BillOrderItem.Observation" placeholder="Observación">
-                                </div>
-                                <div class="form-group">
-                                    <label for="razon_social">Estado</label>
-                                    <select class="form-control" asp-for="BillOrderItem.StateId">
-                                        <option value="">Seleccionar un estado</option>
-                                        @foreach (var state in Model.StateList)
-                                        {
-                                            <option value=@state.Id>@state.StateName</option>
-                                        }
-                                    </select>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
